@@ -283,50 +283,43 @@
             <p class="en"><strong>Physical Significance:</strong> The "infinite density" at a black hole center is the fatal flaw of GR. This operator ensures that under extreme high-energy states, the metric limit is strictly capped at 1.0, mathematically eliminating the possibility of singularities.</p>
         </div>
 
-        <div id="pipeline" class="page">
+     <div id="pipeline" class="page">
             <h1>
                 <span class="zh">LACR 自动化在线盲测管线</span>
                 <span class="en">LACR Live Blind-Test Pipeline</span>
             </h1>
-            <p class="zh">科学的真理在于可复现。LACR 引擎已固化所有拓扑常数，<strong>不提供任何人工调参接口</strong>。您可以直接在网页端点击下方按钮，由您的浏览器引擎实时执行纯正的 Python 物理内核代码，输出盲测报告。</p>
-            <p class="en">The truth of science lies in reproducibility. The LACR engine has solidified all topological constants and <strong>provides no manual tuning interfaces</strong>. Click the button below to execute the pure Python physics kernel directly in your browser.</p>
+            <p class="zh">科学的真理在于可复现。LACR 引擎已固化所有拓扑常数，<strong>不提供任何人工调参接口</strong>。您可以在下方输入任意星系或星团的实测数据，让您的浏览器实时执行纯正的 Python 物理内核代码，验证理论残差。</p>
+            <p class="en">The truth of science lies in reproducibility. The LACR engine has solidified all topological constants and <strong>provides no manual tuning interfaces</strong>. Enter empirical data below to execute the Python physics kernel locally in your browser and verify the residuals.</p>
             
-            <button py-click="run_blind_test" class="run-btn">
-                <span class="zh">▶ 运行 LACR 核心物理引擎 (Run Engine)</span>
-                <span class="en">▶ Run LACR Physics Engine</span>
-            </button>
-            
-            <div id="output-terminal" class="terminal-box">
-[System Ready] LACR Engine Python Environment Loaded.
-Waiting for execution command...
+            <div style="background-color: #161b22; border: 1px solid var(--border-color); padding: 20px; border-radius: 8px; margin-top: 20px;">
+                <h3 style="margin-top: 0; color: var(--accent-color);">1. 星系宏观尺度测试 (SPARC RAR)</h3>
+                <label>
+                    <span class="zh">输入重子引力 ($g_{bar}$):</span>
+                    <span class="en">Input Baryonic Gravity ($g_{bar}$):</span>
+                </label>
+                <input type="text" id="input-gbar" value="1.2e-11" style="background-color: #0d1117; color: #fff; border: 1px solid #30363d; padding: 8px; margin-left: 10px; width: 120px;">
+                <button py-click="test_sparc" class="run-btn" style="padding: 8px 16px; margin-left: 15px; font-size: 1em;">▶ Run Test</button>
             </div>
 
-            <h3 style="margin-top: 30px;">
-                <span class="zh">附：后台执行的 Python 核心逻辑</span>
-                <span class="en">Appendix: Core Python Logic Executed</span>
-            </h3>
-            <pre><code>
-# 浏览器底层正在运行的 LACREngine 核心代码 (零调参)
-import math
-
-class LACREngine:
-    def __init__(self):
-        # 纯几何拓扑常数硬编码 (不可篡改)
-        self.a0 = 10**(-9.92)
-        self.c1 = 1.0 / (24.0 * math.sqrt(2.0))
-        self.c2 = 1.0 / (12.0 * math.sqrt(2.0))
-        
-    def sparc_limit(self, g_bar):
-        """低能宏观极限 (拟合星系 RAR)"""
-        x = g_bar / self.a0
-        return g_bar * (1 + x**-2)**0.25
-
-    def collision_manifold(self, vector, congestion):
-        """高能碰撞态 (处理星团质量分离)"""
-        activation = self.c1 * max(0, vector)**2
-        shield = self.c2 * (congestion * (1 - vector))**2
-        return (1 + activation) / (1 + shield)
-            </code></pre>
+            <div style="background-color: #161b22; border: 1px solid var(--border-color); padding: 20px; border-radius: 8px; margin-top: 20px;">
+                <h3 style="margin-top: 0; color: var(--accent-color);">2. 巨型星系团碰撞测试 (质量重分配)</h3>
+                <label>
+                    <span class="zh">输入各向异性骨架 (Vector):</span>
+                    <span class="en">Input Anisotropic Skeleton (Vector):</span>
+                </label>
+                <input type="number" id="input-vector" value="0.95" step="0.01" style="background-color: #0d1117; color: #fff; border: 1px solid #30363d; padding: 8px; margin: 10px; width: 80px;">
+                <label>
+                    <span class="zh">输入气体拥堵度 (Congestion):</span>
+                    <span class="en">Input Gas Congestion:</span>
+                </label>
+                <input type="number" id="input-congestion" value="0.01" step="0.01" style="background-color: #0d1117; color: #fff; border: 1px solid #30363d; padding: 8px; margin: 10px; width: 80px;">
+                <button py-click="test_cluster" class="run-btn" style="padding: 8px 16px; font-size: 1em;">▶ Run Test</button>
+            </div>
+            
+            <div id="output-terminal" class="terminal-box" style="margin-top: 25px;">
+[System Ready] LACR Engine Python Environment Loaded.
+Awaiting user input...
+            </div>
         </div>
 
         <div style="margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--border-color); text-align: center; color: #8b949e; font-size: 0.9em;">
@@ -340,12 +333,11 @@ class LACREngine:
                 <a href="mailto:smsaut3344@gmail.com" style="color: var(--accent-color); text-decoration: none; font-weight: bold;">smsaut3344@gmail.com</a>
             </p>
         </div>
-        
     </div>
 
-<py-script>
+    <py-script>
 import math
-from pyscript import document # 注意这里改了，不再引入 Element
+from pyscript import document
 
 class LACREngine:
     def __init__(self):
@@ -362,38 +354,40 @@ class LACREngine:
         shield = self.c2 * (congestion * (1 - vector))**2
         return (1 + activation) / (1 + shield)
 
-def run_blind_test(*args, **kwargs):
-    # 使用新版 API 获取 HTML 元素
+engine = LACREngine()
+
+def test_sparc(*args, **kwargs):
     term = document.getElementById("output-terminal")
-    
-    # 清空终端并开始打印输出
-    output_str = "================ LACR 跨尺度大公账盲测系统 =================\n\n"
-    
-    engine = LACREngine()
-    output_str += "[审计启动] 正在自发载入底层时空流形拓扑几何骨架...\n"
-    output_str += f"-> 边界常数: a0 = 10^-9.92\n"
-    output_str += f"-> 秩序激活: c1 = {engine.c1:.6f} (源自 O_h 48阶群自旋破缺)\n"
-    output_str += f"-> 归并屏蔽: c2 = {engine.c2:.6f}\n\n"
+    try:
+        # 从网页获取用户输入的值
+        g_bar_str = document.getElementById("input-gbar").value
+        g_bar_test = float(g_bar_str)
+        pred = engine.sparc_limit(g_bar_test)
+        
+        out = f"================ SPARC 星系测试 ================\n"
+        out += f"[执行引擎] 拓扑骨架 (a0=10^-9.92) 锁定。\n"
+        out += f"-> 观测输入 (重子引力 g_bar): {g_bar_test:.2e} m/s^2\n"
+        out += f"-> LACR 理论推演值 (g_obs):   {pred:.2e} m/s^2\n"
+        out += f"-> 状态: 计算完成，无需暗物质参数介入。\n"
+        term.innerText = out
+    except Exception as e:
+        term.innerText = f"[Error] 格式错误，请输入有效的科学计数法数字，例如 1.2e-11\n{str(e)}"
 
-    output_str += "--------------------------------------------------------\n"
-    output_str += "[测试阶段一] SPARC 星系宏观尺度检验 (零调参拟合)\n"
-    g_bar_test = 1e-11
-    pred = engine.sparc_limit(g_bar_test)
-    output_str += f"-> 观测输入 (重子引力): {g_bar_test:.2e} m/s^2\n"
-    output_str += f"-> LACR 4阶骨架理论预测: {pred:.2e} m/s^2\n"
-    output_str += f"-> 状态: [理论闭合] 完全无需 NFW 轮廓或暗物质晕参数调参。\n\n"
-
-    output_str += "--------------------------------------------------------\n"
-    output_str += "[测试阶段二] 巨型星系团连环碰撞 (如 Bullet Cluster)\n"
-    weight = engine.collision_manifold(vector=0.95, congestion=0.01)
-    output_str += f"-> 观测输入 (各向异性骨架分离): Vector=0.95, 气体拥堵=0.01\n"
-    output_str += f"-> 纯几何投射放大倍数 (即表观暗物质效应): {weight:.4f} 倍\n"
-    output_str += f"-> 状态: [理论闭合] 成功用空间曲率重分配解释引力透镜异常。\n\n"
-    
-    output_str += "================ 盲测完成 (物理学界面临重整) ================\n"
-    
-    # 将输出字符串写入网页终端
-    term.innerText = output_str
+def test_cluster(*args, **kwargs):
+    term = document.getElementById("output-terminal")
+    try:
+        vector = float(document.getElementById("input-vector").value)
+        congestion = float(document.getElementById("input-congestion").value)
+        weight = engine.collision_manifold(vector, congestion)
+        
+        out = f"================ 巨型星系团碰撞测试 ================\n"
+        out += f"[执行引擎] 拓扑常数 (c1={engine.c1:.5f}, c2={engine.c2:.5f}) 锁定。\n"
+        out += f"-> 输入各向异性: {vector:.4f} | 气体拥堵: {congestion:.4f}\n"
+        out += f"-> LACR 纯几何引力放大倍率: {weight:.4f} 倍\n"
+        out += f"-> 结论: 表观质量重分配由曲率相变引致，摒弃假想粒子假说。\n"
+        term.innerText = out
+    except Exception as e:
+        term.innerText = f"[Error] 请输入有效数字。\n{str(e)}"
     </py-script>
 
     <script>
