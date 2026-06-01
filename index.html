@@ -175,49 +175,79 @@
                 <span class="en">LACR Live Blind-Test Pipeline</span>
             </h1>
             <p class="zh">科学的真理在于可复现。LACR 引擎已固化所有拓扑常数，<strong>不提供任何人工调参接口</strong>。您可以选择调用预载的真实深空观测档案，或手动输入参数，由浏览器实时执行物理内核审计。</p>
+            <p class="en">The truth of science lies in reproducibility. The LACR engine has solidified all topological constants and <strong>provides no manual tuning interfaces</strong>. You can choose to load pre-loaded real deep-space observation archives, or input parameters manually to let the browser execute physical kernel audits in real time.</p>
             
             <div style="background-color: #161b22; border: 1px solid var(--border-color); padding: 20px; border-radius: 8px; margin-top: 20px;">
-                <h3 style="margin-top: 0; color: var(--accent-color);">1. 星系宏观尺度测试 (SPARC RAR)</h3>
+                <h3 style="margin-top: 0; color: var(--accent-color);">
+                    <span class="zh">1. 星系宏观尺度测试 (SPARC RAR)</span>
+                    <span class="en">1. Macroscopic Galaxy Scale Test (SPARC RAR)</span>
+                </h3>
                 
                 <div style="margin-bottom: 15px;">
-                    <label style="display: inline-block; width: 140px;">📂 预载观测档案:</label>
+                    <label style="display: inline-block; width: 140px;">
+                        <span class="zh">📂 预载观测档案:</span>
+                        <span class="en">📂 Pre-loaded Archives:</span>
+                    </label>
                     <select id="select-galaxy" style="background-color: #0d1117; color: #fff; border: 1px solid #30363d; padding: 6px; width: 220px;">
-                        <option value="custom">-- 自定义输入 --</option>
-                        <option value="ngc0289">NGC0289 (预言断崖靶点)</option>
-                        <option value="ngc1052df2">NGC 1052-DF2 (超弥散星系)</option>
+                        <option value="custom">-- 自定义 / Custom --</option>
+                        <option value="ngc0289">NGC0289 (预言断崖靶点 / Cliff Target)</option>
+                        <option value="ngc1052df2">NGC 1052-DF2 (超弥散星系 / UDG)</option>
                         <option value="milkyway">银河系尺度基准 (Milky Way Proxy)</option>
                     </select>
-                    <button py-click="load_galaxy_data" class="run-btn" style="padding: 6px 12px; margin-left: 10px; font-size: 0.9em; background-color: #1f6feb;">载入档案</button>
+                    <button py-click="load_galaxy_data" class="run-btn" style="padding: 6px 12px; margin-left: 10px; font-size: 0.9em; background-color: #1f6feb;">
+                        <span class="zh">载入档案</span><span class="en">Load Archive</span>
+                    </button>
                 </div>
 
                 <div>
-                    <label style="display: inline-block; width: 140px;">输入重子引力 ($g_{bar}$):</label>
+                    <label style="display: inline-block; width: 140px;">
+                        <span class="zh">输入重子引力 ($g_{bar}$):</span>
+                        <span class="en">Input Baryonic Gravity ($g_{bar}$):</span>
+                    </label>
                     <input type="text" id="input-gbar" value="1.2e-11" style="background-color: #0d1117; color: #fff; border: 1px solid #30363d; padding: 8px; width: 120px;">
-                    <button py-click="test_sparc" class="run-btn" style="padding: 8px 16px; margin-left: 15px; font-size: 1em;">▶ 执行内核审计</button>
+                    <button py-click="test_sparc" class="run-btn" style="padding: 8px 16px; margin-left: 15px; font-size: 1em;">
+                        <span class="zh">▶ 执行内核审计</span><span class="en">▶ Execute Kernel Audit</span>
+                    </button>
                 </div>
             </div>
 
             <div style="background-color: #161b22; border: 1px solid var(--border-color); padding: 20px; border-radius: 8px; margin-top: 20px;">
-                <h3 style="margin-top: 0; color: var(--accent-color);">2. 巨型星系团碰撞测试 (动态相变)</h3>
+                <h3 style="margin-top: 0; color: var(--accent-color);">
+                    <span class="zh">2. 巨型星系团碰撞测试 (动态相变)</span>
+                    <span class="en">2. Giant Galaxy Cluster Collision Test (Dynamic Phase Transition)</span>
+                </h3>
                 
                 <div style="margin-bottom: 15px;">
-                    <label style="display: inline-block; width: 140px;">📂 预载案发现场:</label>
+                    <label style="display: inline-block; width: 140px;">
+                        <span class="zh">📂 预载案发现场:</span>
+                        <span class="en">📂 Pre-loaded Scenes:</span>
+                    </label>
                     <select id="select-cluster" style="background-color: #0d1117; color: #fff; border: 1px solid #30363d; padding: 6px; width: 220px;">
-                        <option value="custom">-- 自定义输入 --</option>
-                        <option value="bullet">1E 0657-558 (子弹星系团)</option>
-                        <option value="abell520">Abell 520 (火车头空难)</option>
-                        <option value="macs">MACS J0025 (婴儿子弹团)</option>
-                        <option value="pandora">Abell 2744 (潘多拉连环撞)</option>
+                        <option value="custom">-- 自定义 / Custom --</option>
+                        <option value="bullet">1E 0657-558 (子弹星系团 / Bullet Cluster)</option>
+                        <option value="abell520">Abell 520 (火车头空难 / Train Wreck)</option>
+                        <option value="macs">MACS J0025 (婴儿子弹团 / Baby Bullet)</option>
+                        <option value="pandora">Abell 2744 (潘多拉连环撞 / Pandora)</option>
                     </select>
-                    <button py-click="load_cluster_data" class="run-btn" style="padding: 6px 12px; margin-left: 10px; font-size: 0.9em; background-color: #1f6feb;">提取参数</button>
+                    <button py-click="load_cluster_data" class="run-btn" style="padding: 6px 12px; margin-left: 10px; font-size: 0.9em; background-color: #1f6feb;">
+                        <span class="zh">提取参数</span><span class="en">Extract Parameters</span>
+                    </button>
                 </div>
 
                 <div>
-                    <label style="display: inline-block; width: 140px;">各向异性骨架 (Vector):</label>
-                    <input type="text" id="input-vector" value="0.95" style="background-color: #0d1117; color: #fff; border: 1px solid #30363d; padding: 8px; width: 80px;">
-                    <label style="margin-left: 15px;">气体拥堵度 (Congestion):</label>
-                    <input type="text" id="input-congestion" value="0.01" style="background-color: #0d1117; color: #fff; border: 1px solid #30363d; padding: 8px; width: 80px;">
-                    <button py-click="test_cluster" class="run-btn" style="padding: 8px 16px; margin-left: 15px; font-size: 1em;">▶ 纯几何重分配映射</button>
+                    <label style="display: inline-block; width: 140px;">
+                        <span class="zh">各向异性骨架 (Vector):</span>
+                        <span class="en">Anisotropic Skeleton (Vector):</span>
+                    </label>
+                    <input type="number" id="input-vector" value="0.95" step="0.01" style="background-color: #0d1117; color: #fff; border: 1px solid #30363d; padding: 8px; width: 80px;">
+                    <label style="margin-left: 15px;">
+                        <span class="zh">气体拥堵度 (Congestion):</span>
+                        <span class="en">Gas Congestion:</span>
+                    </label>
+                    <input type="number" id="input-congestion" value="0.01" step="0.01" style="background-color: #0d1117; color: #fff; border: 1px solid #30363d; padding: 8px; width: 80px;">
+                    <button py-click="test_cluster" class="run-btn" style="padding: 8px 16px; margin-left: 15px; font-size: 1em;">
+                        <span class="zh">▶ 纯几何重分配映射</span><span class="en">▶ Geometric Redistribution Mapping</span>
+                    </button>
                 </div>
             </div>
             
@@ -263,16 +293,16 @@ engine = LACREngine()
 
 # --- 真实深空观测档案库 ---
 galaxy_archives = {
-    "ngc0289": {"gbar": "3.5e-12", "name": "NGC0289 (预言断崖靶点)"},
-    "ngc1052df2": {"gbar": "8.0e-13", "name": "NGC 1052-DF2 (超弥散星系)"},
-    "milkyway": {"gbar": "1.2e-10", "name": "Milky Way Proxy (银河系级)"}
+    "ngc0289": {"gbar": "3.5e-12", "name": "NGC0289"},
+    "ngc1052df2": {"gbar": "8.0e-13", "name": "NGC 1052-DF2"},
+    "milkyway": {"gbar": "1.2e-10", "name": "Milky Way Proxy"}
 }
 
 cluster_archives = {
-    "bullet": {"v": "0.95", "c": "0.01", "name": "子弹星系团 两翼区"},
-    "abell520": {"v": "-0.20", "c": "12.0", "name": "Abell 520 中央拥堵区"},
-    "macs": {"v": "0.92", "c": "0.02", "name": "MACS J0025 婴儿子弹团"},
-    "pandora": {"v": "0.93", "c": "0.03", "name": "Abell 2744 潘多拉西侧核心"}
+    "bullet": {"v": "0.95", "c": "0.01", "name": "Bullet Cluster (Wings)"},
+    "abell520": {"v": "-0.20", "c": "12.0", "name": "Abell 520 (Center Congestion)"},
+    "macs": {"v": "0.92", "c": "0.02", "name": "MACS J0025 (Baby Bullet)"},
+    "pandora": {"v": "0.93", "c": "0.03", "name": "Abell 2744 (Pandora West Core)"}
 }
 
 def load_galaxy_data(*args, **kwargs):
@@ -281,10 +311,10 @@ def load_galaxy_data(*args, **kwargs):
     if selection in galaxy_archives:
         data = galaxy_archives[selection]
         document.getElementById("input-gbar").value = data["gbar"]
-        term.innerText = f"[系统日志] 成功提取 {data['name']} 的射电巡天重子引力底账 (g_bar = {data['gbar']})。\n等待执行内核审计..."
+        term.innerText = f"[System Log] Loaded radio survey baryonic gravity base (g_bar = {data['gbar']}) for {data['name']}.\nWaiting for kernel audit execution..."
     else:
         document.getElementById("input-gbar").value = ""
-        term.innerText = "[系统日志] 已切换至极客自定义模式，等待手动输入参数..."
+        term.innerText = "[System Log] Switched to Custom Mode. Waiting for manual parameter input..."
 
 def load_cluster_data(*args, **kwargs):
     term = document.getElementById("output-terminal")
@@ -293,11 +323,11 @@ def load_cluster_data(*args, **kwargs):
         data = cluster_archives[selection]
         document.getElementById("input-vector").value = data["v"]
         document.getElementById("input-congestion").value = data["c"]
-        term.innerText = f"[系统日志] 成功加载 {data['name']} 的高能碰撞特征参数。\n-> 骨架各向异性 = {data['v']} | 气体拥堵度 = {data['c']}\n等待物理映射..."
+        term.innerText = f"[System Log] Loaded high-energy collision feature parameters for {data['name']}.\n-> Skeleton Anisotropy = {data['v']} | Gas Congestion = {data['c']}\nWaiting for physical mapping execution..."
     else:
         document.getElementById("input-vector").value = ""
         document.getElementById("input-congestion").value = ""
-        term.innerText = "[系统日志] 已切换至极客自定义模式，等待手动输入碰撞参数..."
+        term.innerText = "[System Log] Switched to Custom Mode. Waiting for manual collision parameter input..."
 
 def test_sparc(*args, **kwargs):
     term = document.getElementById("output-terminal")
@@ -305,14 +335,14 @@ def test_sparc(*args, **kwargs):
         g_bar_test = float(document.getElementById("input-gbar").value)
         pred = engine.sparc_limit(g_bar_test)
         
-        out = f"================ SPARC 星系宏观尺度审计 ================\n"
-        out += f"[引擎锁定] 4阶几何骨架激活 | 绝对边界 a0 = 10^-9.92\n"
-        out += f"-> 载入重子资产底账 (g_bar): {g_bar_test:.2e} m/s^2\n"
-        out += f"-> LACR 代数闭合输出 (g_obs): {pred:.2e} m/s^2\n"
-        out += f"-> 审计结论: 计算完毕。系统性亏空已被几何拓扑吸收，拒绝暗物质粒子假说。\n"
+        out = f"================ SPARC Macroscopic Galaxy Scale Audit ================\n"
+        out += f"[Engine Locked] 4th-order geometric skeleton activated | Absolute boundary a0 = 10^-9.92\n"
+        out += f"-> Input Baryonic Asset Base (g_bar): {g_bar_test:.2e} m/s^2\n"
+        out += f"-> LACR Algebraic Closure Output (g_obs): {pred:.2e} m/s^2\n"
+        out += f"-> Audit Conclusion: Calculation complete. Systematic deficits have been absorbed by geometric topology. Dark matter particle hypothesis rejected.\n"
         term.innerText = out
     except Exception as e:
-        term.innerText = f"[核心崩溃] 格式错误，需要标准科学计数法 (如 1.2e-11)。详细信息: {str(e)}"
+        term.innerText = f"[Core Crash] Format error. Standard scientific notation required (e.g., 1.2e-11). Details: {str(e)}"
 
 def test_cluster(*args, **kwargs):
     term = document.getElementById("output-terminal")
@@ -321,14 +351,14 @@ def test_cluster(*args, **kwargs):
         congestion = float(document.getElementById("input-congestion").value)
         weight = engine.collision_manifold(vector, congestion)
         
-        out = f"================ 巨型星团相变重分配审计 ================\n"
-        out += f"[引擎锁定] O_h群对称性破缺不变量 c1 = {engine.c1:.5f}, c2 = {engine.c2:.5f}\n"
-        out += f"-> 当前碰撞态流形特征: 秩序激活向量={vector:.2f} | 全同气体拥堵度={congestion:.2f}\n"
-        out += f"-> LACR 纯几何引力放大倍率: {weight:.4f} 倍\n"
-        out += f"-> 审计结论: 表观质量重分配由极端曲率相变引致，实现因果大闭合。\n"
+        out = f"================ Giant Cluster Phase Transition Redistribution Audit ================\n"
+        out += f"[Engine Locked] O_h group symmetry breaking invariants: c1 = {engine.c1:.5f}, c2 = {engine.c2:.5f}\n"
+        out += f"-> Current collision state manifold features: Order activation vector = {vector:.2f} | Identical gas congestion = {congestion:.2f}\n"
+        out += f"-> LACR Pure Geometric Gravity Amplification Ratio: {weight:.4f}x\n"
+        out += f"-> Audit Conclusion: Apparent mass redistribution is induced by extreme curvature phase transitions, achieving causal closure.\n"
         term.innerText = out
     except Exception as e:
-        term.innerText = f"[核心崩溃] 参数输入无效。详细信息: {str(e)}"
+        term.innerText = f"[Core Crash] Invalid parameter input. Details: {str(e)}"
     </py-script>
 
     <script>
@@ -352,7 +382,6 @@ def test_cluster(*args, **kwargs):
             document.getElementById('pipeline-content').style.display = 'none';
             const dynamicContainer = document.getElementById('dynamic-content');
             
-            // 【终极防缓存机制】：加了 ?v=时间戳，保证每次点击拉取的绝对是最新的 HTML
             fetch(filename + '?v=' + new Date().getTime())
                 .then(response => {
                     if (!response.ok) throw new Error('Network response was not ok');
@@ -377,6 +406,10 @@ def test_cluster(*args, **kwargs):
             setActiveButton(btn);
             document.getElementById('dynamic-content').style.display = 'none';
             document.getElementById('pipeline-content').style.display = 'block';
+            
+            // 确保切过来时中英文也能适配当前状态
+            const lang = document.body.classList.contains('lang-en') ? 'en' : 'zh';
+            setLanguage(lang);
         }
 
         function setLanguage(lang) {
@@ -384,14 +417,12 @@ def test_cluster(*args, **kwargs):
             body.classList.remove('lang-zh', 'lang-en');
             body.classList.add('lang-' + lang);
             
-            const dynamicContainer = document.getElementById('dynamic-content');
-            if(dynamicContainer) {
-                dynamicContainer.querySelectorAll('.zh, .en').forEach(el => el.style.display = ''); 
-                if(lang === 'en') {
-                    dynamicContainer.querySelectorAll('.zh').forEach(el => el.style.setProperty('display', 'none', 'important'));
-                } else {
-                    dynamicContainer.querySelectorAll('.en').forEach(el => el.style.setProperty('display', 'none', 'important'));
-                }
+            // 扫描所有包裹在动态内容和本地管线里的中英文字符，进行硬隐藏
+            document.querySelectorAll('.zh, .en').forEach(el => el.style.display = ''); 
+            if(lang === 'en') {
+                document.querySelectorAll('.zh').forEach(el => el.style.setProperty('display', 'none', 'important'));
+            } else {
+                document.querySelectorAll('.en').forEach(el => el.style.setProperty('display', 'none', 'important'));
             }
         }
 
