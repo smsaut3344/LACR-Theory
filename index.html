@@ -343,9 +343,9 @@ class LACREngine:
         
     </div>
 
-    <py-script>
+<py-script>
 import math
-from pyscript import Element
+from pyscript import document # 注意这里改了，不再引入 Element
 
 class LACREngine:
     def __init__(self):
@@ -363,7 +363,9 @@ class LACREngine:
         return (1 + activation) / (1 + shield)
 
 def run_blind_test(*args, **kwargs):
-    term = Element("output-terminal")
+    # 使用新版 API 获取 HTML 元素
+    term = document.getElementById("output-terminal")
+    
     # 清空终端并开始打印输出
     output_str = "================ LACR 跨尺度大公账盲测系统 =================\n\n"
     
@@ -390,7 +392,8 @@ def run_blind_test(*args, **kwargs):
     
     output_str += "================ 盲测完成 (物理学界面临重整) ================\n"
     
-    term.element.innerText = output_str
+    # 将输出字符串写入网页终端
+    term.innerText = output_str
     </py-script>
 
     <script>
