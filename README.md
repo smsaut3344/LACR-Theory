@@ -30,7 +30,7 @@ The engine successfully closes the following observational deficits without intr
 ### ⚙️ The Action Principle (The "God Equation")
 All code logic in this pipeline is strictly varied from the following non-linear conformal coupled Lagrangian action:
 
-$$S_{LACR} = \int d^4x \sqrt{-g} \left\{ e^{-\alpha \chi^2} (\partial_\mu \phi \partial^\mu \phi) \left[ 1 + (1 - \theta) \beta F_{\rho\sigma} F^{\rho\sigma} \right] + \theta \beta F_{\rho\sigma} F^{\rho\sigma} \right\}$$
+$$S_{LACR} = \int d^4x \sqrt{-g} \left\lbrace e^{-\alpha \chi^2} (\partial_\mu \phi \partial^\mu \phi) \left[ 1 + (1 - \theta) \beta F_{\rho\sigma} F^{\rho\sigma} \right] + \theta \beta F_{\rho\sigma} F^{\rho\sigma} \right\rbrace$$
 
 - **$\phi$**: Macroscopic gravitational skeleton (main scalar field).
 - **$\alpha, \beta$**: Absolute topological closure constants of the discrete spacetime manifold (19 for Choke, 37 for Boost).
@@ -59,7 +59,7 @@ $$S_{LACR} = \int d^4x \sqrt{-g} \left\{ e^{-\alpha \chi^2} (\partial_\mu \phi \
 Ensure your system has Python 3.8+ and NumPy installed.
 确保您的系统已安装 Python 3.8+ 及 NumPy。
 ```bash
-git clone https://github.com/smsaut3344/LACR-Theory.git
+git clone [https://github.com/smsaut3344/LACR-Theory.git](https://github.com/smsaut3344/LACR-Theory.git)
 cd LACR-Theory
 pip install numpy pandas
 ```
