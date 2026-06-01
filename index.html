@@ -102,7 +102,9 @@
         @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
-<body class="lang-zh"> <div class="sidebar">
+<body class="lang-zh"> 
+
+    <div class="sidebar">
         <h2>LACR Engine</h2>
         <button class="nav-btn active" onclick="showPage('home')">
             <span class="zh">📚 项目主页</span><span class="en">📚 Home</span>
@@ -307,12 +309,23 @@ if __name__ == "__main__":
     print("[报告出炉] 拒绝暗物质粒子假说。 / Rejecting dark matter particle hypothesis.")
             </code></pre>
         </div>
+
+        <div style="margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--border-color); text-align: center; color: #8b949e; font-size: 0.9em;">
+            <p>
+                <span class="zh">© 2026 Andy(文大方) - LACR Theory. 保留所有权利。</span>
+                <span class="en">© 2026 Andy(Wen Dafang) - LACR Theory. All Rights Reserved.</span>
+            </p>
+            <p>
+                <span class="zh">学术探讨与合作，请联系作者：</span>
+                <span class="en">For academic inquiries and collaboration, please contact: </span>
+                <a href="mailto:smsaut3344@gmail.com" style="color: var(--accent-color); text-decoration: none; font-weight: bold;">smsaut3344@gmail.com</a>
+            </p>
+        </div>
+        
     </div>
 
     <script>
-        // 初始化语言检测
         document.addEventListener('DOMContentLoaded', () => {
-            // 获取浏览器语言 (zh-CN, zh-TW, en-US 等)
             const userLang = navigator.language || navigator.userLanguage;
             if (userLang.toLowerCase().startsWith('zh')) {
                 setLanguage('zh');
@@ -321,24 +334,20 @@ if __name__ == "__main__":
             }
         });
 
-        // 切换页面
         function showPage(pageId) {
             document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
             document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
             document.getElementById(pageId).classList.add('active');
             event.currentTarget.classList.add('active');
-            // 确保 MathJax 在页面切换时正确排版
             if (window.MathJax) { MathJax.typesetPromise(); }
         }
 
-        // 设置语言
         function setLanguage(lang) {
             const body = document.body;
             body.classList.remove('lang-zh', 'lang-en');
             body.classList.add('lang-' + lang);
         }
 
-        // 按钮手动切换语言
         function toggleLanguage() {
             const body = document.body;
             if (body.classList.contains('lang-zh')) {
