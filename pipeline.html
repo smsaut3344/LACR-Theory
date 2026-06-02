@@ -23,7 +23,7 @@
                 <option value="ngc1052df2">NGC 1052-DF2 (<span class="zh">超弥散星系</span><span class="en">Ultra-Diffuse Galaxy</span>)</option>
                 <option value="milkyway">银河系尺度基准 (Milky Way Proxy)</option>
             </select>
-            <button py-click="load_galaxy_data" class="run-btn" style="padding: 6px 12px; margin-left: 10px; font-size: 0.9em; background-color: #1f6feb;">
+            <button onclick="window.py_load_galaxy_data()" class="run-btn" style="padding: 6px 12px; margin-left: 10px; font-size: 0.9em; background-color: #1f6feb;">
                 <span class="zh">载入档案</span><span class="en">Load Archive</span>
             </button>
         </div>
@@ -34,7 +34,7 @@
                 <span class="en">Input Baryonic Gravity ($g_{bar}$):</span>
             </label>
             <input type="text" id="input-gbar" value="1.2e-11" style="background-color: #0d1117; color: #fff; border: 1px solid #30363d; padding: 8px; width: 120px;">
-            <button py-click="test_sparc" class="run-btn" style="padding: 8px 16px; margin-left: 15px; font-size: 1em;">
+            <button onclick="window.py_test_sparc()" class="run-btn" style="padding: 8px 16px; margin-left: 15px; font-size: 1em;">
                 <span class="zh">▶ 执行内核审计</span><span class="en">▶ Execute Kernel Audit</span>
             </button>
         </div>
@@ -58,7 +58,7 @@
                 <option value="macs">MACS J0025 (<span class="zh">婴儿子弹团</span><span class="en">Baby Bullet</span>)</option>
                 <option value="pandora">Abell 2744 (<span class="zh">潘多拉连环撞</span><span class="en">Pandora Cluster</span>)</option>
             </select>
-            <button py-click="load_cluster_data" class="run-btn" style="padding: 6px 12px; margin-left: 10px; font-size: 0.9em; background-color: #1f6feb;">
+            <button onclick="window.py_load_cluster_data()" class="run-btn" style="padding: 6px 12px; margin-left: 10px; font-size: 0.9em; background-color: #1f6feb;">
                 <span class="zh">提取参数</span><span class="en">Extract Parameters</span>
             </button>
         </div>
@@ -74,7 +74,7 @@
                 <span class="en">Gas Congestion:</span>
             </label>
             <input type="text" id="input-congestion" value="0.01" style="background-color: #0d1117; color: #fff; border: 1px solid #30363d; padding: 8px; width: 80px;">
-            <button py-click="test_cluster" class="run-btn" style="padding: 8px 16px; margin-left: 15px; font-size: 1em;">
+            <button onclick="window.py_test_cluster()" class="run-btn" style="padding: 8px 16px; margin-left: 15px; font-size: 1em;">
                 <span class="zh">▶ 纯几何重分配映射</span><span class="en">▶ Geometric Redistribution Mapping</span>
             </button>
         </div>
@@ -85,138 +85,3 @@
 Waiting for standard astronomical data input or archive extraction...
     </div>
 </div>
-
-<py-script>
-import math
-from pyscript import document
-
-class LACREngine:
-    def __init__(self):
-        self.a0 = 10**(-9.92)
-        self.c1 = 1.0 / (24.0 * math.sqrt(2.0))
-        self.c2 = 1.0 / (12.0 * math.sqrt(2.0))
-
-    def sparc_limit(self, g_bar):
-        x = g_bar / self.a0
-        return g_bar * (1 + x**-2)**0.25
-
-    def collision_manifold(self, vector, congestion):
-        activation = self.c1 * max(0, vector)**2
-        shield = self.c2 * (congestion * (1 - vector))**2
-        return (1 + activation) / (1 + shield)
-
-engine = LACREngine()
-
-galaxy_archives = {
-    "ngc0289": {"gbar": "3.5e-12", "name_zh": "NGC0289 (预言靶点)", "name_en": "NGC0289 (Cliff Target)"},
-    "ngc1052df2": {"gbar": "8.0e-13", "name_zh": "NGC 1052-DF2 (超弥散星系)", "name_en": "NGC 1052-DF2 (UDG)"},
-    "milkyway": {"gbar": "1.2e-10", "name_zh": "银河系尺度基准", "name_en": "Milky Way Proxy"}
-}
-
-cluster_archives = {
-    "bullet": {"v": "0.95", "c": "0.01", "name_zh": "子弹星系团 两翼区", "name_en": "Bullet Cluster (Wings)"},
-    "abell520": {"v": "-0.20", "c": "12.0", "name_zh": "Abell 520 中央拥堵区", "name_en": "Abell 520 Central Congestion"},
-    "macs": {"v": "0.92", "c": "0.02", "name_zh": "MACS J0025 婴儿子弹团", "name_en": "MACS J0025 (Baby Bullet)"},
-    "pandora": {"v": "0.93", "c": "0.03", "name_zh": "Abell 2744 潘多拉西侧核心", "name_en": "Abell 2744 Pandora West Core"}
-}
-
-def is_zh_mode():
-    try:
-        classes = document.body.className
-        return "lang-zh" in classes
-    except:
-        return True
-
-def load_galaxy_data(*args, **kwargs):
-    term = document.getElementById("output-terminal")
-    selection = document.getElementById("select-galaxy").value
-    zh = is_zh_mode()
-    
-    if selection in galaxy_archives:
-        data = galaxy_archives[selection]
-        document.getElementById("input-gbar").value = data["gbar"]
-        if zh:
-            term.innerText = f"[系统日志] 成功提取 {data['name_zh']} 的射电巡天重子引力底账 (g_bar = {data['gbar']})。\n等待执行内核审计..."
-        else:
-            term.innerText = f"[System Log] Successfully extracted radio survey baryonic assets base (g_bar = {data['gbar']}) for {data['name_en']}.\nWaiting for kernel audit execution..."
-    else:
-        document.getElementById("input-gbar").value = ""
-        if zh:
-            term.innerText = "[系统日志] 已切换至极客自定义模式，等待手动输入参数..."
-        else:
-            term.innerText = "[System Log] Switched to Geeks Custom Mode. Waiting for manual parameter input..."
-
-def load_cluster_data(*args, **kwargs):
-    term = document.getElementById("output-terminal")
-    selection = document.getElementById("select-cluster").value
-    zh = is_zh_mode()
-    
-    if selection in cluster_archives:
-        data = cluster_archives[selection]
-        document.getElementById("input-vector").value = data["v"]
-        document.getElementById("input-congestion").value = data["c"]
-        if zh:
-            term.innerText = f"[系统日志] 成功加载 {data['name_zh']} 的高能碰撞特征参数。\n-> 骨架各向异性 = {data['v']} | 气体拥堵度 = {data['c']}\n等待物理映射..."
-        else:
-            term.innerText = f"[System Log] Successfully loaded high-energy collision feature parameters for {data['name_en']}.\n-> Skeleton Anisotropy = {data['v']} | Gas Congestion = {data['c']}\nWaiting for physical mapping..."
-    else:
-        document.getElementById("input-vector").value = ""
-        document.getElementById("input-congestion").value = ""
-        if zh:
-            term.innerText = "[系统日志] 已切换至极客自定义模式，等待手动输入碰撞参数..."
-        else:
-            term.innerText = "[System Log] Switched to Geeks Custom Mode. Waiting for manual collision parameters..."
-
-def test_sparc(*args, **kwargs):
-    term = document.getElementById("output-terminal")
-    zh = is_zh_mode()
-    try:
-        g_bar_test = float(document.getElementById("input-gbar").value)
-        pred = engine.sparc_limit(g_bar_test)
-        
-        if zh:
-            out = f"================ SPARC 星系宏观尺度审计 ================\n"
-            out += f"[引擎锁定] 4阶几何骨架激活 | 绝对边界 a0 = 10^-9.92\n"
-            out += f"-> 载入重子资产底账 (g_bar): {g_bar_test:.2e} m/s^2\n"
-            out += f"-> LACR 代数闭合输出 (g_obs): {pred:.2e} m/s^2\n"
-            out += f"-> 审计结论: 计算完毕。系统性亏空已被几何拓扑吸收，拒绝暗物质粒子假说。\n"
-        else:
-            out = f"================ SPARC Macroscopic Galaxy Scale Audit ================\n"
-            out += f"[Engine Locked] 4th-order geometric skeleton activated | Absolute boundary a0 = 10^-9.92\n"
-            out += f"-> Input Baryonic Assets Base (g_bar): {g_bar_test:.2e} m/s^2\n"
-            out += f"-> LACR Algebraic Closure Output (g_obs): {pred:.2e} m/s^2\n"
-            out += f"-> Audit Conclusion: Calculation complete. Systematic deficits absorbed by geometric topology. Dark matter particle hypothesis rejected.\n"
-        term.innerText = out
-    except Exception as e:
-        if zh:
-            term.innerText = f"[核心崩溃] 格式错误，需要标准科学计数法 (如 1.2e-11)。详细信息: {str(e)}"
-        else:
-            term.innerText = f"[Core Crash] Format error. Standard scientific notation required (e.g., 1.2e-11). Details: {str(e)}"
-
-def test_cluster(*args, **kwargs):
-    term = document.getElementById("output-terminal")
-    zh = is_zh_mode()
-    try:
-        vector = float(document.getElementById("input-vector").value)
-        congestion = float(document.getElementById("input-congestion").value)
-        weight = engine.collision_manifold(vector, congestion)
-        
-        if zh:
-            out = f"================ 巨型星团相变重分配审计 ================\n"
-            out += f"[引擎锁定] O_h群对称性破缺不变量 c1 = {engine.c1:.5f}, c2 = {engine.c2:.5f}\n"
-            out += f"-> 当前碰撞态流形特征: 秩序激活向量={vector:.2f} | 全同气体拥堵度={congestion:.2f}\n"
-            out += f"-> LACR 纯几何引力放大倍率: {weight:.4f} 倍\n"
-            out += f"-> 审计结论: 表观质量重分配由极端曲率相变引致，实现因果大闭合。\n"
-        else:
-            out = f"================ Giant Cluster Phase Transition Redistribution Audit ================\n"
-            out += f"[Engine Locked] O_h group symmetry breaking invariants: c1 = {engine.c1:.5f}, c2 = {engine.c2:.5f}\n"
-            out += f"-> Current collision state manifold features: Order activation vector = {vector:.2f} | Identical gas congestion = {congestion:.2f}\n"
-            out += f"-> LACR Pure Geometric Gravity Amplification Ratio: {weight:.4f}x\n"
-            out += f"-> Audit Conclusion: Apparent mass redistribution is induced by extreme curvature phase transitions, achieving causal closure.\n"
-        term.innerText = out
-    except Exception as e:
-        if zh:
-            term.innerText = f"[核心崩溃] 参数输入无效。详细信息: {str(e)}"
-        else:
-            term.innerText = f"[Core Crash] Invalid parameter input. Details: {str(e)}"
-</py-script>
