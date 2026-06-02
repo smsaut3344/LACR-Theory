@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LACR Theory | 时空流形的数据重整化理论</title>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="stylesheet" href="https://pyscript.net/releases/2023.11.1/core.css" />
-    <script type="module" src="https://pyscript.net/releases/2023.11.1/core.js"></script>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@pyscript/core@2023.11.1/dist/core.css" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@pyscript/core@2023.11.1/dist/core.js"></script>
     
     <style>
         :root {
@@ -24,7 +25,7 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             
-            /* 核心修复区：强制左右并列，绝不换行 */
+            /* 刚性分屏锁：强制左右并列，绝不换行 */
             display: flex;
             flex-direction: row; 
             flex-wrap: nowrap;
@@ -36,10 +37,19 @@
         body.lang-en .zh { display: none !important; }
         body.lang-zh .en { display: none !important; }
 
+        /* 核心修复区 2：大闸防漏锁！如果内核加载超时或挂起，强行隐匿底层代码，严防白字乱窜 */
+        py-script, py-config, script[type="py"] {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            position: absolute !important;
+            z-index: -9999 !important;
+        }
+
         .sidebar {
             width: 280px;
-            min-width: 280px; /* 强制左侧栏最小宽度 */
-            flex-shrink: 0;   /* 绝对禁止左侧栏收缩 */
+            min-width: 280px; /* 锁死左侧栏最小宽度 */
+            flex-shrink: 0;   /* 绝对禁止左侧栏收缩变窄 */
             background-color: var(--sidebar-bg);
             border-right: 1px solid var(--border-color);
             padding: 20px 0;
@@ -97,16 +107,16 @@
 
         .content {
             flex: 1;
-            min-width: 0; /* 极其关键：防止内部超长公式撑破容器 */
+            min-width: 0; /* 极致防溢：防止内部长公式和代码撑破大盘 */
             padding: 40px 80px;
             overflow-y: auto;
-            overflow-x: hidden; /* 防止出现横向滚动条打乱布局 */
+            overflow-x: hidden; /* 切断横向溢出滚动条 */
             line-height: 1.8;
             position: relative;
             box-sizing: border-box;
         }
         
-        /* 移动端优雅降级响应式设计 */
+        /* 移动端优雅降级自适应响应式架构 */
         @media (max-width: 768px) {
             body {
                 flex-direction: column;
@@ -123,7 +133,7 @@
             }
         }
         
-        /* 内部动态加载的样式补丁 */
+        /* 内部动态模块样式注入 */
         #dynamic-content .page { animation: fadeIn 0.4s ease-in-out; padding-bottom: 120px;}
         #dynamic-content h1, #dynamic-content h2, #dynamic-content h3 { color: #fff; margin-top: 1.5em; }
         #dynamic-content h1 { border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-top: 0; }
@@ -161,7 +171,6 @@
             white-space: pre-wrap;
         }
 
-        /* 随内容自然滚动的全局页脚 */
         .footer-box {
             margin-top: 60px;
             padding-top: 20px;
@@ -326,7 +335,6 @@ class LACREngine:
 
 engine = LACREngine()
 
-# --- 真实深空观测档案库 ---
 galaxy_archives = {
     "ngc0289": {"gbar": "3.5e-12", "name": "NGC0289"},
     "ngc1052df2": {"gbar": "8.0e-13", "name": "NGC 1052-DF2"},
@@ -442,7 +450,6 @@ def test_cluster(*args, **kwargs):
             document.getElementById('dynamic-content').style.display = 'none';
             document.getElementById('pipeline-content').style.display = 'block';
             
-            // 确保切过来时中英文也能适配当前状态
             const lang = document.body.classList.contains('lang-en') ? 'en' : 'zh';
             setLanguage(lang);
         }
@@ -452,7 +459,6 @@ def test_cluster(*args, **kwargs):
             body.classList.remove('lang-zh', 'lang-en');
             body.classList.add('lang-' + lang);
             
-            // 扫描所有包裹在动态内容和本地管线里的中英文字符，进行硬隐藏
             document.querySelectorAll('.zh, .en').forEach(el => el.style.display = ''); 
             if(lang === 'en') {
                 document.querySelectorAll('.zh').forEach(el => el.style.setProperty('display', 'none', 'important'));
