@@ -17,16 +17,17 @@
 ## 🌍 English Version
 
 ### 🌌 Overview
-This project introduces a new computational cosmology paradigm that eliminates the need for the "Dark Matter" particle hypothesis and standard artificial parameter tuning. By introducing the absolute geometric constants derived from the discrete $O_h$ point group (order 48) and a non-minimal conformal coupling Lagrangian, **the Wen Dafang (WDF) theory unifies three major physical scales (Galaxies, Cluster Collisions, and the CMB) under a strict "Zero Free-Parameter" constraint.**
+This project introduces a new computational cosmology paradigm that eliminates the need for the "Dark Matter" particle hypothesis and standard artificial parameter tuning. By introducing the absolute geometric constants derived from the discrete $O_h$ point group (order 48) and a non-minimal conformal coupling Lagrangian, **the Wen Dafang (WDF) theory unifies physical scales from the Quantum level to Galaxies, Cluster Collisions, and the CMB under a strict "Zero Free-Parameter" constraint.**
 
 This repository contains the mathematical derivations, the core physical engine (`wdf_engine.py`), and the automated blind-test pipeline (`run_blind_test.py`) for cross-scale verification.
 
 ### 🎯 Key Breakthroughs
-The WDF engine successfully closes the following observational deficits without introducing any per-object free parameters:
+The WDF engine successfully closes the following observational deficits without introducing any empirical free parameters:
 
 1. **Zero-Tuning Fit for SPARC (Galactic Scale):** Utilizing a 4th-order geometric skeleton $(1 + x^{-2})^{0.25}$ and an absolute boundary constant $a_0 = 10^{-9.92}$, it perfectly fits the Radial Acceleration Relation (RAR) of 175 galaxies. It naturally reduces to General Relativity in strong fields, yielding a mean absolute residual of `0.1229 dex`.
 2. **Extreme Cluster Collisions (Cluster Scale):** Based on the symmetry-breaking constants $c_1$ and $c_2$ rigidly derived from the $O_h$ group, it accurately reproduces the anomalous mass redistribution in the Bullet Cluster (anisotropic separation) and Abell 520 (isotropic congestion) purely through geometric topological projection.
 3. **CMB High-Frequency Blind Test (Microscopic Scale):** When multipole moments cross discrete fractal mapping points (e.g., harmonics of $O_h=48$ and structural ratios like $\ell \sim 1836$), the engine physically triggers a high-frequency Phase Shift, successfully suppressing electromagnetic leakage and closing the acoustic peaks without perturbative fluid free variables.
+4. **Pure Geometric Derivation of Fundamental Constants (Quantum Scale):** Completely abandoned phenomenological fitting to derive the Proton/Electron Mass ratio ($12^3 + 108 = 1836$) via 3D fractal recursive folding, and the Fine Structure Constant ($\alpha^{-1} \approx 136.980$) via topological homology correction, rigidly anchoring mass and interaction strength to the $O_h=48$ group baseline.
 
 ### ⚙️ The Action Principle (Wen Dafang's Equation)
 All code logic in this pipeline is strictly varied from the following non-linear conformal coupled Lagrangian action:
@@ -42,14 +43,15 @@ $$S_{WDF} = \int \frac{d^4x}{\pi^2} \sqrt{-g} \left\lbrace e^{-\alpha \chi^2} (\
 ## 🌏 中文阐述 (Chinese Version)
 
 ### 🌌 项目概述
-本项目旨在提供一种彻底摒弃“暗物质”粒子假设与人工调参的计算宇宙学新范式。通过引入底层离散 $O_h$ 群网格的拓扑常数（阶数 48）和非极小共形耦合拉格朗日量，**文大方理论 (WDF Theory) 在「绝对零自由参数」的铁律下，实现了宏观星系、巨型星系团碰撞与微观宇宙微波背景辐射（CMB）的三大尺度物理学大统一。**
+本项目旨在提供一种彻底摒弃“暗物质”粒子假设与人工调参的计算宇宙学新范式。通过引入底层离散 $O_h$ 群网格的拓扑常数（阶数 48）和非极小共形耦合拉格朗日量，**文大方理论 (WDF Theory) 在「绝对零自由参数」的铁律下，实现了从量子尺度、宏观星系、巨型星系团碰撞到微观宇宙微波背景辐射（CMB）的全尺度物理学大统一。**
 
 ### 🎯 核心战绩
-本引擎已成功硬性闭合以下三大主流物理学长期存在的“观测亏空”，全程未引入任何针对单一星系的自由参数：
+本引擎已成功硬性闭合以下主流物理学长期存在的“观测亏空”与理论天坑，全程未引入任何经验性的自由参数：
 
 1. **SPARC 数据库零调参拟合 (Galactic Scale):** 基于 4 阶几何骨架与绝对边界常数 $a_0 = 10^{-9.92}$，完美拟合 175 个星系的径向加速度关系 (RAR)，强场区自动退化回广义相对论，平均绝对残差仅为 `0.1229 dex`。
 2. **星系团极端碰撞态 (Cluster Scale):** 基于 $O_h$ 48阶群对称性破缺刚性导出的常数 $c_1$ 与 $c_2$，在纯几何投射下，精准复现了 Bullet Cluster（各向异性骨架分离）与 Abell 520（全同气体极度拥堵）中的透镜质量异常重分配。
 3. **CMB 高频段盲测大公账 (Microscopic Scale):** 在多极矩处于离散分形映射点（如 $\ell \sim 1836$ 及 $48$ 的谐波倍数）时，引擎物理触发高频缓冲相移（Phase Shift），成功镇压电磁泄露底噪，无需微扰流体自由变量即可完美闭合声学波峰。
+4. **核心物理常数的纯几何推导 (Quantum Scale):** 彻底抛弃现象学拟合，纯靠几何拓扑推导出质子/电子质量比（信息维度折叠：$12^3 + 108 = 1836$）与精细结构常数（几何同调相移：$\alpha^{-1} \approx 136.980$），将物质质量与相互作用强度刚性锚定在 $O_h=48$ 阶群底座上。
 
 ### ⚙️ 核心作用量 (文大方场方程)
 本理论管线中的所有代码逻辑，均严格通过变分以下非极小共形耦合拉格朗日作用量得出：
