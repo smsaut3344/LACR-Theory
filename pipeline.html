@@ -18,22 +18,15 @@
                 <span class="en">📂 Pre-loaded Archives:</span>
             </label>
             <select id="select-galaxy" style="background-color: #0d1117; color: #fff; border: 1px solid #30363d; padding: 6px; width: 220px;">
-                <option value="custom">
-                    <span class="zh">-- 自定义输入 --</span>
-                    <span class="en">-- Custom Input --</span>
-                </option>
-                <option value="ngc0289">
-                    <span class="zh">NGC0289 (预言断崖靶点)</span>
-                    <span class="en">NGC0289 (Cliff Target)</span>
-                </option>
-                <option value="ngc1052df2">
-                    <span class="zh">NGC 1052-DF2 (超弥散星系)</span>
-                    <span class="en">NGC 1052-DF2 (Ultra-Diffuse Galaxy)</span>
-                </option>
-                <option value="milkyway">
-                    <span class="zh">银河系尺度基准</span>
-                    <span class="en">Milky Way Proxy</span>
-                </option>
+                <option value="custom" class="zh">-- 自定义输入 --</option>
+                <option value="ngc0289" class="zh">NGC0289 (预言断崖靶点)</option>
+                <option value="ngc1052df2" class="zh">NGC 1052-DF2 (超弥散星系)</option>
+                <option value="milkyway" class="zh">银河系尺度基准</option>
+                
+                <option value="custom" class="en">-- Custom Input --</option>
+                <option value="ngc0289" class="en">NGC0289 (Cliff Target)</option>
+                <option value="ngc1052df2" class="en">NGC 1052-DF2 (Ultra-Diffuse Galaxy)</option>
+                <option value="milkyway" class="en">Milky Way Proxy</option>
             </select>
             <button onclick="window.load_galaxy_data()" class="run-btn" style="padding: 6px 12px; margin-left: 10px; font-size: 0.9em; background-color: #1f6feb;">
                 <span class="zh">载入档案</span><span class="en">Load Archive</span>
@@ -64,26 +57,17 @@
                 <span class="en">📂 Pre-loaded Scenes:</span>
             </label>
             <select id="select-cluster" style="background-color: #0d1117; color: #fff; border: 1px solid #30363d; padding: 6px; width: 220px;">
-                <option value="custom">
-                    <span class="zh">-- 自定义输入 --</span>
-                    <span class="en">-- Custom Input --</span>
-                </option>
-                <option value="bullet">
-                    <span class="zh">1E 0657-558 (子弹星系团)</span>
-                    <span class="en">1E 0657-558 (Bullet Cluster)</span>
-                </option>
-                <option value="abell520">
-                    <span class="zh">Abell 520 (火车头空难)</span>
-                    <span class="en">Abell 520 (Train Wreck Anomaly)</span>
-                </option>
-                <option value="macs">
-                    <span class="zh">MACS J0025 (婴儿子弹团)</span>
-                    <span class="en">MACS J0025 (Baby Bullet)</span>
-                </option>
-                <option value="pandora">
-                    <span class="zh">Abell 2744 (潘多拉连环撞)</span>
-                    <span class="en">Abell 2744 (Pandora Cluster)</span>
-                </option>
+                <option value="custom" class="zh">-- 自定义输入 --</option>
+                <option value="bullet" class="zh">1E 0657-558 (子弹星系团)</option>
+                <option value="abell520" class="zh">Abell 520 (火车头空难)</option>
+                <option value="macs" class="zh">MACS J0025 (婴儿子弹团)</option>
+                <option value="pandora" class="zh">Abell 2744 (潘多拉连环撞)</option>
+                
+                <option value="custom" class="en">-- Custom Input --</option>
+                <option value="bullet" class="en">1E 0657-558 (Bullet Cluster)</option>
+                <option value="abell520" class="en">Abell 520 (Train Wreck Anomaly)</option>
+                <option value="macs" class="en">MACS J0025 (Baby Bullet)</option>
+                <option value="pandora" class="en">Abell 2744 (Pandora Cluster)</option>
             </select>
             <button onclick="window.load_cluster_data()" class="run-btn" style="padding: 6px 12px; margin-left: 10px; font-size: 0.9em; background-color: #1f6feb;">
                 <span class="zh">提取参数</span><span class="en">Extract Parameters</span>
