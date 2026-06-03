@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LACR Theory | 时空流形的数据重整化理论</title>
+    <title>文大方理论 (WDF Theory) | 时空流形的数据重整化理论</title>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <style>
@@ -160,7 +160,7 @@
 <body class="lang-zh"> 
 
     <div class="sidebar">
-        <h2>LACR Engine</h2>
+        <h2>WDF Engine</h2>
         <button class="nav-btn active" onclick="loadModule('home.html', this)">
             <span class="zh">📚 核心理念与战绩</span><span class="en">📚 Core & Results</span>
         </button>
@@ -190,8 +190,8 @@
 
         <div class="footer-box">
             <p>
-                <span class="zh">© 2026 Andy(文大方) - LACR Theory. 保留所有权利。</span>
-                <span class="en">© 2026 Andy(Wen Dafang) - LACR Theory. All Rights Reserved.</span>
+                <span class="zh">© 2026 文大方 (Wen Dafang) Theory. 保留所有权利。</span>
+                <span class="en">© 2026 Wen Dafang Theory. All Rights Reserved.</span>
             </p>
             <p>
                 <span class="zh">学术探讨、严谨盲审与合作，请联系作者：</span>
@@ -203,11 +203,11 @@
 
 <script>
 /* =======================================================
-   LACR JS CORE - 完美原生闭环替代系统
+   WDF JS CORE - 完美原生闭环替代系统
    100% 完整复刻原 Python 引擎的所有算法、变量和终端日志级细节
 ======================================================= */
 
-class LACREngine {
+class WDFEngine {
     constructor() {
         this.a0 = Math.pow(10, -9.92);
         this.c1 = 1.0 / (24.0 * Math.sqrt(2.0));
@@ -226,7 +226,7 @@ class LACREngine {
     }
 }
 
-const engine = new LACREngine();
+const engine = new WDFEngine();
 
 const galaxy_archives = {
     "ngc0289": {
@@ -336,14 +336,14 @@ function test_sparc() {
             let out = `================ SPARC 星系宏观尺度审计 ================ \n`;
             out += `[引擎锁定] 4阶几何骨架激活 | 绝对边界 a0 = 10^-9.92\n`;
             out += `-> 载入重子资产底账 (g_bar): ${g_bar_test.toExponential(2)} m/s^2\n`;
-            out += `-> LACR 代数闭合输出 (g_obs): ${pred.toExponential(2)} m/s^2\n`;
+            out += `-> 文大方理论代数闭合输出 (g_obs): ${pred.toExponential(2)} m/s^2\n`;
             out += `-> 审计结论: 计算完毕。系统性亏空已被几何拓扑吸收，拒绝暗物质粒子假说。\n`;
             term.innerText = out;
         } else {
             let out = `================ SPARC Macroscopic Galaxy Scale Audit ================ \n`;
             out += `[Engine Locked] 4th-order geometric skeleton activated | Absolute boundary a0 = 10^-9.92\n`;
             out += `-> Input Baryonic Asset Base (g_bar): ${g_bar_test.toExponential(2)} m/s^2\n`;
-            out += `-> LACR Algebraic Closure Output (g_obs): ${pred.toExponential(2)} m/s^2\n`;
+            out += `-> WDF Algebraic Closure Output (g_obs): ${pred.toExponential(2)} m/s^2\n`;
             out += `-> Audit Conclusion: Calculation complete. Systematic deficits have been absorbed by geometric topology. Dark matter particle hypothesis rejected.\n`;
             term.innerText = out;
         }
@@ -369,14 +369,14 @@ function test_cluster() {
             let out = `================ 巨型星团相变重分配审计 ================ \n`;
             out += `[引擎锁定] O_h群对称性破缺不变量 c1 = ${engine.c1.toFixed(5)}, c2 = ${engine.c2.toFixed(5)}\n`;
             out += `-> 当前碰撞态流形特征: 秩序激活向量=${vector.toFixed(2)} | 全同气体拥堵度=${congestion.toFixed(2)}\n`;
-            out += `-> LACR 纯几何引力放大倍率: ${weight.toFixed(4)} 倍\n`;
+            out += `-> 文大方理论纯几何引力放大倍率: ${weight.toFixed(4)} 倍\n`;
             out += `-> 审计结论: 表观质量重分配由极端曲率相变引致，实现因果大闭合。\n`;
             term.innerText = out;
         } else {
             let out = `================ Giant Cluster Phase Transition Redistribution Audit ================ \n`;
             out += `[Engine Locked] O_h group symmetry breaking invariants: c1 = ${engine.c1.toFixed(5)}, c2 = ${engine.c2.toFixed(5)}\n`;
             out += `-> Current collision state manifold features: Order activation vector = ${vector.toFixed(2)} | Identical gas congestion = ${congestion.toFixed(2)}\n`;
-            out += `-> LACR Pure Geometric Gravity Amplification Ratio: ${weight.toFixed(4)}x\n`;
+            out += `-> WDF Pure Geometric Gravity Amplification Ratio: ${weight.toFixed(4)}x\n`;
             out += `-> Audit Conclusion: Apparent mass redistribution is induced by extreme curvature phase transitions, achieving causal closure.\n`;
             term.innerText = out;
         }
