@@ -1,13 +1,12 @@
 # WDF Theory: Data Renormalization of Spacetime Manifold
 **文大方理论 (WDF)：时空流形的数据重整化与纯几何广义协变场论**
 
-**Author (作者):** Andy(文大方) | **Contact (邮箱):** [smsaut3344@gmail.com](mailto:smsaut3344@gmail.com)
+**Author (作者):** Andy(文大方) | **Contact (邮箱):** smsaut3344@gmail.com
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 ![Physics: Cosmology](https://img.shields.io/badge/Physics-Cosmology-red.svg)
 ![Status: Peer Review Ready](https://img.shields.io/badge/Status-Peer%20Review%20Ready-success.svg)
-[![DOI](https://zenodo.org/badge/1255705490.svg)](https://doi.org/10.5281/zenodo.20488837)
-
+[![DOI](https://zenodo.org/badge/1255705490.svg)]([https://doi.org/10.5281/zenodo.20488837](https://doi.org/10.5281/zenodo.20488837))
 
 > *"We do not need to invent invisible particles to balance the universe's ledger. The geometry of spacetime itself, when constrained by discrete topological invariants, enforces the balance."*
 > 
@@ -61,6 +60,43 @@ $$S_{WDF} = \int \frac{d^4x}{\pi^2} \sqrt{-g} \left\lbrace e^{-\alpha \chi^2} (\
 Ensure your system has Python 3.8+ and NumPy installed.
 确保您的系统已安装 Python 3.8+ 及 NumPy。
 ```bash
-git clone [https://github.com/smsaut3344/WDF-Theory.git](https://github.com/smsaut3344/WDF-Theory.git)
+git clone https://github.com/smsaut3344/WDF-Theory.git
 cd WDF-Theory
 pip install numpy pandas
+```
+
+### 2. Run the Blind Test Pipeline (运行盲测管线)
+```bash
+python run_blind_test.py
+```
+*The pipeline will automatically load the preset SPARC baryonic scales and the anisotropic observational data of the major clusters, outputting the final theoretical audit ledger.*
+*管线将自动加载预设的 SPARC 重子引力标度及巨型星团（子弹、潘多拉等）的各向异性观测数据，并输出最终的零调参理论校验公账。*
+
+---
+
+## 📂 Repository Structure (目录结构)
+- `index.html` : 项目的 GitHub Pages 极客主页 / The Geek Homepage (Includes detailed academic manuscripts and derivations).
+- `wdf_engine.py` : 锁死底层 48 阶拓扑常数的物理核引擎 / The core physical engine with hardcoded topological constants (**Strictly Immutable**).
+- `run_blind_test.py` : 跨尺度统一盲测启动脚本 / The script to initiate the cross-scale blind test.
+- `data/` : 存放观测源文件 / Directory for observational source files (e.g., `sparc_data.txt`, `cluster_archives.csv`).
+
+---
+
+## 📄 Academic Reference & Full Manuscript (学术验证与完整手稿)
+We welcome colleagues in theoretical and astrophysics to challenge and falsify this engine. For detailed mechanisms (e.g., Grassmann Nilpotent Law), $O_h$ group theory derivations, and near-term observable predictions (e.g., non-linear geometric compression in CMB), please visit the project homepage:
+
+欢迎理论物理学界、天体物理学界的同仁对本文大方引擎进行拉扯与证伪。详细的格拉斯曼代数奇点截断机制、48 阶群拓扑推导及近期可观测的前瞻刚性预言，请访问项目主页阅读完整手稿：
+
+👉 **[Read the Full WDF Covariant Field Theory Paper (点击阅读完整理论与推导)](https://smsaut3344.github.io/WDF-Theory/)**
+
+---
+
+### 📬 Contact the Author (联系作者)
+For academic discussions, rigorous peer review, or collaboration inquiries, please reach out directly:
+如果您有关于底层物理方程的探讨、学术盲审意见或合作意向，请直接联系作者：
+
+👤 **Author:** Andy(文大方)  
+📧 **Email:** smsaut3344@gmail.com  
+
+## ⚖️ License
+This project is licensed under the MIT License - see the LICENSE file for details. Copyright (c) 2026 Andy(Wen Dafang).
