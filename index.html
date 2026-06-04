@@ -367,27 +367,45 @@ function test_sparc() {
         const g_bar_test = parseFloat(document.getElementById("input-gbar").value);
         if (isNaN(g_bar_test)) throw new Error("Invalid Input");
         
-        const pred = engine.sparc_limit(g_bar_test);
+        const result = engine.sparc_limit(g_bar_test);
         
         if (zh) {
             let out = `================ SPARC 星系宏观尺度审计 ================ \n`;
-            out += `[引擎锁定] 4阶几何骨架激活 | 绝对边界 a0 = 10^-9.92\n`;
+            out += `[引擎锁定] 4阶几何骨架 | 绝对边界 a0 = 10^-9.92 | 本源投影点火大闸 = 0.12\n`;
             out += `-> 载入重子资产底账 (g_bar): ${g_bar_test.toExponential(2)} m/s^2\n`;
-            out += `-> 文大方理论代数闭合输出 (g_obs): ${pred.toExponential(2)} m/s^2\n`;
-            out += `-> 审计结论: 计算完毕。系统性亏空已被几何拓扑吸收，拒绝暗物质粒子假说。\n`;
+            out += `-> 刚性点火阈值 (g_ignite): ${result.threshold.toExponential(2)} m/s^2\n`;
+            
+            if (result.ignited) {
+                out += `-> [状态: 成功点火] 触发几何拓扑放大\n`;
+                out += `-> 文大方理论代数闭合输出 (g_obs): ${result.g_obs.toExponential(2)} m/s^2\n`;
+                out += `-> 审计结论: 计算完毕。系统性亏空已被几何拓扑完美吸收，拒绝暗物质粒子。\n`;
+            } else {
+                out += `-> [状态: 点火失败] 密度跌破网格激活下限\n`;
+                out += `-> 文大方理论代数闭合输出 (g_obs): ${result.g_obs.toExponential(2)} m/s^2\n`;
+                out += `-> 审计结论: 几何杠杆全面关停！引擎极其精准地锁死了 DF2 类超弥散星系“反常缺乏暗物质”的终极原因。\n`;
+            }
             term.innerText = out;
         } else {
             let out = `================ SPARC Macroscopic Galaxy Scale Audit ================ \n`;
-            out += `[Engine Locked] 4th-order geometric skeleton activated | Absolute boundary a0 = 10^-9.92\n`;
+            out += `[Engine Locked] 4th-order skeleton | Boundary a0 = 10^-9.92 | Lattice Ignition Ratio = 0.12\n`;
             out += `-> Input Baryonic Asset Base (g_bar): ${g_bar_test.toExponential(2)} m/s^2\n`;
-            out += `-> WDF Algebraic Closure Output (g_obs): ${pred.toExponential(2)} m/s^2\n`;
-            out += `-> Audit Conclusion: Calculation complete. Systematic deficits have been absorbed by geometric topology. Dark matter particle hypothesis rejected.\n`;
+            out += `-> Rigid Ignition Threshold (g_ignite): ${result.threshold.toExponential(2)} m/s^2\n`;
+            
+            if (result.ignited) {
+                out += `-> [State: Ignition Success] Geometric topological amplification triggered\n`;
+                out += `-> WDF Algebraic Closure Output (g_obs): ${result.g_obs.toExponential(2)} m/s^2\n`;
+                out += `-> Audit Conclusion: Deficits absorbed by pure geometry. DM particles rejected.\n`;
+            } else {
+                out += `-> [State: Ignition Failed] Density falls below grid activation limit\n`;
+                out += `-> WDF Algebraic Closure Output (g_obs): ${result.g_obs.toExponential(2)} m/s^2\n`;
+                out += `-> Audit Conclusion: Geometric leverage completely shut down! Accurately locks the Newtonian dynamics of DF2 ultra-diffuse galaxies.\n`;
+            }
             term.innerText = out;
         }
     } catch (e) {
         term.innerText = zh 
             ? `[核心崩溃] 格式错误，需要标准科学计数法 (如 1.2e-11)。详细信息: ${e.message}`
-            : `[Core Crash] Format error. Standard scientific notation required (e.g., 1.2e-11). Details: ${e.message}`;
+            : `[Core Crash] Format error. Details: ${e.message}`;
     }
 }
 
