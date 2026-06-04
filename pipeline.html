@@ -3,13 +3,13 @@
         <span class="zh">文大方理论 (WDF) 自动化在线盲测管线</span>
         <span class="en">WDF Live Blind-Test Pipeline</span>
     </h1>
-    <p class="zh">科学的真理在于可复现。文大方 (WDF) 引擎已固化所有拓扑常数，<strong>不提供任何人工调参接口</strong>。您可以选择调用预载的真实深空观测档案，或手动输入参数，由浏览器实时执行物理内核审计。</p>
-    <p class="en">The truth of science lies in reproducibility. The WDF engine has solidified all topological constants and <strong>provides no manual tuning interfaces</strong>. You can choose to load pre-loaded real deep-space observation archives, or input parameters manually to let the browser execute physical kernel audits in real time.</p>
+    <p class="zh">科学的真理在于可复现。文大方 (WDF) 引擎现已固化所有拓扑常数，<strong>不提供任何人工调参接口与唯象滑块</strong>。您可以调用预载的真实深空观测数据，或输入任意自定义未知参数。本页面不设任何预设死代码，由浏览器底层执行现场代数核算，全量公开审计过程。</p>
+    <p class="en">The truth of science lies in reproducibility. The WDF engine has solidified all topological constants and <strong>provides no manual tuning interfaces</strong>. You can choose to load pre-loaded real deep-space observation archives, or input completely customized parameters. No look-up tables exist; the browser executes live algebraic audits in real time with fully transparent validation.</p>
     
     <div style="background-color: #161b22; border: 1px solid var(--border-color); padding: 20px; border-radius: 8px; margin-top: 20px;">
         <h3 style="margin-top: 0; color: var(--accent-color);">
-            <span class="zh">1. 星系宏观尺度测试 (SPARC RAR)</span>
-            <span class="en">1. Macroscopic Galaxy Scale Test (SPARC RAR)</span>
+            <span class="zh">1. 星系宏观尺度测试 (SPARC RAR 实时审计)</span>
+            <span class="en">1. Macroscopic Galaxy Scale Test (Live SPARC RAR Audit)</span>
         </h3>
         
         <div style="margin-bottom: 15px;">
@@ -28,7 +28,7 @@
             </button>
         </div>
 
-        <div>
+        <div style="margin-bottom: 15px;">
             <label style="display: inline-block; width: 140px;">
                 <span class="zh">输入重子引力 ($g_{bar}$):</span>
                 <span class="en">Input Baryonic Gravity ($g_{bar}$):</span>
@@ -38,11 +38,18 @@
                 <span class="zh">▶ 执行内核审计</span><span class="en">▶ Execute Kernel Audit</span>
             </button>
         </div>
+        
+        <p class="zh" style="color: #8b949e; font-size: 0.85em; margin: 5px 0 0 0; font-style: italic;">
+            * 现场审计公式 (Live Equation): $g_{obs} = \left[ g_{bar}^4 + (c_1 \cdot H_0 \cdot c)^4 \right]^{0.25} \times \left(1 + \frac{0.12}{\Omega_{info} + 10^{-5}}\right)^{-1}$。您可以更改任意 $g_{bar}$ 数值验证其代数连续性。
+        </p>
+        <p class="en" style="color: #8b949e; font-size: 0.85em; margin: 5px 0 0 0; font-style: italic;">
+            * Live Equation: $g_{obs} = \left[ g_{bar}^4 + (c_1 \cdot H_0 \cdot c)^4 \right]^{0.25} \times \left(1 + \frac{0.12}{\Omega_{info} + 10^{-5}}\right)^{-1}$. Modify $g_{bar}$ to any custom floating point to verify math continuity.
+        </p>
     </div>
 
     <div style="background-color: #161b22; border: 1px solid var(--border-color); padding: 20px; border-radius: 8px; margin-top: 20px;">
         <h3 style="margin-top: 0; color: var(--accent-color);">
-            <span class="zh">2. 巨型星系团碰撞测试 (动态相变)</span>
+            <span class="zh">2. 巨型星系团碰撞测试 (动态相变重分配)</span>
             <span class="en">2. Giant Galaxy Cluster Collision Test (Dynamic Phase Transition)</span>
         </h3>
         
@@ -63,7 +70,7 @@
             </button>
         </div>
 
-        <div>
+        <div style="margin-bottom: 15px;">
             <label style="display: inline-block; width: 140px;">
                 <span class="zh">各向异性骨架 (Vector):</span>
                 <span class="en">Anisotropic Skeleton (Vector):</span>
@@ -78,6 +85,13 @@
                 <span class="zh">▶ 纯几何重分配映射</span><span class="en">▶ Geometric Redistribution Mapping</span>
             </button>
         </div>
+        
+        <p class="zh" style="color: #8b949e; font-size: 0.85em; margin: 5px 0 0 0; font-style: italic;">
+            * 现场拓扑分叉机制: 当系统气体拥堵度超过临界值 $c_2 = \frac{1}{12\sqrt{2}}$ 时，流形自动切换为无序归并形态。所有分变映射完全依赖输入的 Vector 与 Congestion 现场变分求解。
+        </p>
+        <p class="en" style="color: #8b949e; font-size: 0.85em; margin: 5px 0 0 0; font-style: italic;">
+            * Live Bifurcation Mechanism: When congestion exceeds $c_2 = \frac{1}{12\sqrt{2}}$, the manifold shifts to a disordered merging state. Variations are solved entirely live based on user-defined Vector and Congestion inputs.
+        </p>
     </div>
     
     <div id="output-terminal" class="terminal-box" style="margin-top: 25px;">
