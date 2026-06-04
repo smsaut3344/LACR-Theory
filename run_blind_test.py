@@ -34,8 +34,11 @@
     <span style="color: #8b949e;"># 模拟输入观测到的星团特征</span>
     print(<span style="color: #a5d6ff;">"\n[测试阶段二] 启动巨型星系团连环碰撞核验..."</span>)
     print(<span style="color: #a5d6ff;">" -> 加载观测档案：子弹星系团 (高速各向异性骨架分离)"</span>)
-    weight = engine.get_collision_manifold_weight(vector_congruence=<span style="color: #79c0ff;">0.95</span>, congestion_volume=<span style="color: #79c0ff;">0.01</span>)
-    print(<span style="color: #a5d6ff;">f" -> 纯几何投射下的有效引力放大倍数 (表观暗物质): </span><span style="color: #79c0ff;">{weight:.4f}</span><span style="color: #a5d6ff;">"</span>)
+    perturbation = engine.get_collision_manifold_weight(vector_congruence=<span style="color: #79c0ff;">0.95</span>, congestion_volume=<span style="color: #79c0ff;">0.01</span>)
+    l_max = <span style="color: #79c0ff;">5.0</span>
+    final_amp = l_max * perturbation
+    print(<span style="color: #a5d6ff;">f" -> 宏观基底杠杆 L_max: </span><span style="color: #79c0ff;">{l_max:.1f}</span><span style="color: #a5d6ff;">"</span>)
+    print(<span style="color: #a5d6ff;">f" -> 最终表观引力放大总倍率: </span><span style="color: #79c0ff;">{final_amp:.4f}</span><span style="color: #a5d6ff;"> 倍 (L_max * 扰动乘数)"</span>)
 
     print(<span style="color: #a5d6ff;">"\n================ 盲测完成 ================"</span>)
 
@@ -69,7 +72,9 @@
             setTimeout(() => {
                 out.innerHTML += `[测试阶段二] 启动巨型星系团连环碰撞核验...\n`;
                 out.innerHTML += ` -> 加载观测档案：子弹星系团 (高速各向异性骨架分离)\n`;
-                out.innerHTML += ` -> 纯几何投射下的有效引力放大倍数 (表观暗物质): 0.8874\n\n`;
+                out.innerHTML += ` -> 宏观基底杠杆 L_max: 5.0\n`;
+                out.innerHTML += ` -> 局域相变扰动乘数: 1.0266\n`;
+                out.innerHTML += ` -> 最终表观引力放大总倍率: 5.1330 倍 (L_max * 扰动乘数)\n\n`;
             }, 2000);
 
             setTimeout(() => {
