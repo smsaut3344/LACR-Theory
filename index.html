@@ -229,15 +229,34 @@ class WDFEngine {
         this.a0 = Math.pow(10, -9.92);
         this.c1 = 1.0 / (24.0 * Math.sqrt(2.0));
         this.c2 = 1.0 / (12.0 * Math.sqrt(2.0));
+        // [新增刚性底账] 12通道本源投影比
+        this.lattice_ratio = 0.12; 
     }
 
     sparc_limit(g_bar) {
+        // [WDF核心机制：点火梯度大闸] 阈值 = a0 * (0.12)^2
+        const ignition_gradient = this.a0 * Math.pow(this.lattice_ratio, 2); 
+        
+        // 如果极度稀薄（如 DF2），网格拓扑未被激活，引力不产生几何折叠（纯牛顿态）
+        if (g_bar < ignition_gradient) {
+            return {
+                g_obs: g_bar, // 直接返回重子引力，放大倍数为 1.0
+                ignited: false,
+                threshold: ignition_gradient
+            };
+        }
+        
+        // 如果跨越阈值，触发 WDF 4阶几何流形放大（如银河系、NGC 0289）
         const x = g_bar / this.a0;
-        return g_bar * Math.pow(1 + Math.pow(x, -2), 0.25);
+        const g_obs_amplified = g_bar * Math.pow(1 + Math.pow(x, -2), 0.25);
+        return {
+            g_obs: g_obs_amplified,
+            ignited: true,
+            threshold: ignition_gradient
+        };
     }
 
     collision_manifold(vector, congestion) {
-        // [刚性修复] 1. 允许负矢量存在，直接平方获取几何张力；2. 线性正反馈；3. 乘法闭合
         const activation = this.c1 * Math.pow(vector, 2);
         const shield = this.c2 * congestion;
         return (1 + activation) * (1 + shield);
