@@ -40,10 +40,14 @@
         </div>
         
         <p class="zh" style="color: #8b949e; font-size: 0.85em; margin: 5px 0 0 0; font-style: italic;">
-            * 现场审计公式 (Live Equation): $g_{obs} = \left[ g_{bar}^4 + (c_1 \cdot H_0 \cdot c)^4 \right]^{0.25} \times \left(1 + \frac{0.12}{\Omega_{info} + 10^{-5}}\right)^{-1}$。您可以更改任意 $g_{bar}$ 数值验证其代数连续性。
+            * 现场审计公式 (Live Equation): 引擎受制于 12 通道本源点火大闸 $g_{ignite} = a_0 \times (0.12)^2$。
+            $$ g_{obs} = \begin{cases} g_{bar}, & g_{bar} < g_{ignite} \text{ (网格拓扑未激活，如 DF2)} \\ g_{bar} \left[ 1 + \left(\frac{a_0}{g_{bar}}\right)^2 \right]^{1/4}, & g_{bar} \ge g_{ignite} \text{ (触发4阶骨架放大)} \end{cases} $$
+            *您可以更改任意 $g_{bar}$ 数值，直接验证引擎在超低密度下如何触发刚性断崖（关停引力杠杆）。
         </p>
         <p class="en" style="color: #8b949e; font-size: 0.85em; margin: 5px 0 0 0; font-style: italic;">
-            * Live Equation: $g_{obs} = \left[ g_{bar}^4 + (c_1 \cdot H_0 \cdot c)^4 \right]^{0.25} \times \left(1 + \frac{0.12}{\Omega_{info} + 10^{-5}}\right)^{-1}$. Modify $g_{bar}$ to any custom floating point to verify math continuity.
+            * Live Equation: The engine is governed by the 12-channel ignition gate $g_{ignite} = a_0 \times (0.12)^2$.
+            $$ g_{obs} = \begin{cases} g_{bar}, & g_{bar} < g_{ignite} \text{ (Topology unignited, e.g., DF2)} \\ g_{bar} \left[ 1 + \left(\frac{a_0}{g_{bar}}\right)^2 \right]^{1/4}, & g_{bar} \ge g_{ignite} \text{ (4th-order amplification)} \end{cases} $$
+            *Modify $g_{bar}$ to verify how the engine rigidly triggers the topological cliff (shutting down gravity leverage) at ultra-low densities.
         </p>
     </div>
 
