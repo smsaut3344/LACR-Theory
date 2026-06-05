@@ -66,7 +66,7 @@
         这严格证明了，孤子质量等于其微观状态数的迹：<strong>$M = \text{Tr}(H) = m_e \cdot \dim(\mathcal{H})$</strong>。这就排除了对数或开方的可能，质量泛函必须是体积状态数（Bulk）与边界状态数（Boundary）的绝对代数相加！</p>
 
         <p class="zh" style="margin-top: 15px;"><strong>2. 内部体积态 ($N^3$) 与 边界约束态 ($Nd^2$)：</strong><br>
-        底层通道数为 $N = 12$。$d=3$ 维的封闭拓扑流形，内部空间信息基数为：$N^d = 12^3 = \mathbf{1728}$。<br>
+        静态质量是投影在 3D 物理空间上的观测值，故调用投影通道数 $N = 12$。$d=3$ 维的封闭拓扑流形，内部空间信息基数为：$N^d = 12^3 = \mathbf{1728}$。<br>
         为了防止信息逃逸，边界 $\partial M$ 的法向通量需要 $d \times d$ 的度规张量 $g_{ij}$ 约束，独立矩阵自由度为 $\text{Tr}(g) = d^2 = 9$。每个自由度与 $N=12$ 耦合，边界代价为：$12 \times 9 = \mathbf{108}$。</p>
 
         <p class="zh" style="margin-top: 15px;"><strong>3. $\lambda \equiv 1$ 的 Callan-Harvey 反常计算 (Anomaly Inflow)：</strong><br>
@@ -87,9 +87,9 @@
 
     <div class="highlight-box" style="margin-top: 20px; font-size: 1.05em; border-left-color: #ff7b72;">
         <p class="zh" style="margin-top: 0;"><strong>Betti 数与背景磁通：</strong> $S_{WDF}$ 定义的底层离散晶格在周期性边界下构成三维环面拓扑流形（$T^3$）。该流形的第一 Betti 数严格为 $b_1 = \dim H^1(T^3) = \mathbf{3}$。这在数学上确立了：流形上天然存在 3 个独立的谐和 1-form（背景磁通扇区）。<br><br>
-        <strong>WDF 狄拉克零模公理：</strong><br>
+        <strong>WDF 狄拉克零模假说：</strong><br>
         根据阿蒂亚-辛格指标定理：$\text{Index}(\mathcal{D}) = \int \text{ch}(F)$。<br>
-        当规范场与这 3 个独立的背景磁通扇区耦合时，必迫使流形上的狄拉克算子 $\mathcal{D}$ 产生 3 组完全正交的手性拓扑零模家族。WDF 确立物理学必然对应：<strong>每一个狄拉克谐和 1-form 零模家族，即对应大自然中的一个费米子世代！</strong></p>
+        当规范场与这 3 个独立的背景磁通扇区耦合时，必迫使流形上的狄拉克算子 $\mathcal{D}$ 产生 3 组完全正交的手性拓扑零模家族。WDF 提出物理学必然对应：<strong>每一个狄拉克谐和 1-form 零模家族，即对应大自然中的一个费米子世代！</strong></p>
     </div>
 
     <h2 style="color: #d4af37; margin-top: 40px; border-bottom: 1px solid var(--border-color); padding-bottom: 5px;">
@@ -101,7 +101,8 @@
     <div class="highlight-box" style="margin-top: 20px; font-size: 1.05em; border-left-color: #d4af37;">
         <p class="zh" style="margin-top: 0;"><strong>瞬子作用量 $S_{inst}$ 与拓扑熵：</strong><br>
         中微子是剥落的 2-form 瞬态面，其向 3-form（质量态）的拓扑泄漏是一个跨越维度势垒的瞬子隧穿过程。在欧氏路径积分 $Z_E = \int e^{-S_E}$ 中，$Z_E \equiv 1/W$（$W$为微观状态数）。这意味着欧氏瞬子作用量天然等于相空间的宏观信息熵：$S_{inst} = \ln(W)$。<br>
-        晶格公理核心 $O_h=48$ 在宏观 $D_M=4$ 维流形上的完整相空间组态数为 $W = O_h^{D_M}$。直接推导出隧穿作用量：$S_{inst} = \ln(O_h^{D_M}) = D_M \ln(O_h)$。</p>
+        <span style="color: #ff7b72;"><strong>严密声明：</strong>与静态质量投影使用的 $N=12$ 空间通道不同，瞬子隧穿是跨越 $D_M=4$ 维宏观时空的全局拓扑效应，必须调用完整的底层未投影相空间 $O_h=48$。</span><br>
+        完整的底层晶格相空间在 $D_M=4$ 维流形上的总状态数为 $W = O_h^{D_M}$。直接推导出隧穿作用量：$S_{inst} = \ln(O_h^{D_M}) = D_M \ln(O_h)$。</p>
         
         <p class="zh" style="margin-top: 15px;"><strong>路径积分压制与刚性预测：</strong><br>
         代入隧穿振幅公式，得到极其严密的指数衰减概率：
@@ -112,7 +113,7 @@
             $m_\nu \approx m_e \times 48^{-4} = \frac{511,000 \text{ eV}}{5,308,416} \approx \mathbf{0.09626 \text{ eV}}$
         </div>
 
-        <p class="zh" style="margin-top: 15px;"><strong>生死检验：</strong> 0.09626 eV 这一完全由底层拓扑公理 $O_h=48$ 算出的理论绝对值，极其完美地落在了普朗克卫星 (Planck 2018) 给出的宇宙学绝对上限（$\sum m_\nu < 0.12 \text{ eV}$）之内！若未来测定基态质量偏离该数量级，WDF 理论当场被证伪！我们只相信代数，不调残差。</p>
+        <p class="zh" style="margin-top: 15px;"><strong>生死检验：</strong> 0.09626 eV 这一完全由底层拓扑公理算出的理论绝对值，极其完美地落在了普朗克卫星 (Planck 2018) 给出的宇宙学质量绝对上限（$\sum m_\nu < 0.12 \text{ eV}$）之内！若未来测定基态质量偏离该数量级，WDF 理论当场被证伪！我们只相信代数方程，不调残差。</p>
     </div>
 
     <h2 style="color: var(--accent-color); margin-top: 40px; border-bottom: 1px solid var(--border-color); padding-bottom: 5px;">
@@ -120,7 +121,7 @@
         <span class="en">VI. Unification Dynamics: Rewriting Beta Decay & The 48 Code</span>
     </h2>
     <div class="highlight-box" style="margin-top: 20px; border-left-color: #d4af37;">
-        <p class="zh" style="margin-top: 0;">现代物理学写中子 $\beta$ 衰变为 $n \to p^+ + e^- + \bar{\nu}_e$。在 WDF 的场方程框架中，像<strong>解压文件</strong>一样重写它：</p>
+        <p class="zh" style="margin-top: 0;">现代物理学写中子 $\beta$ 衰变为 $n \to p^+ + e^- + \bar{\nu}_e$。在 WDF 的作用量动力学框架中，像<strong>解压文件</strong>一样重写它：</p>
 
         <div style="text-align: center; margin: 20px 0; font-family: monospace; font-size: 1.1em; color: var(--text-color);">
             $\Psi_{3-form}(n) \xrightarrow{\delta S = 0 \text{ 变分破裂}} \Psi_{3-form}'(p) \oplus \hat{T}_{12}(\Psi_{1-form})$
