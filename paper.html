@@ -7,6 +7,22 @@
     <p class="zh">本页展示 WDF 理论的“第一性原理”源头。我们拒绝用不同的数学工具去分别拼凑现象，宇宙的所有物理谱系（SU(3)、1836、三代、中微子质量）皆严格遵循一条绝对统一的刚性铁链：<strong>$S_{WDF} \text{ 作用量} \to \text{场方程变分} \to \text{拓扑同调} \to \text{物理谱系自动涌现}$</strong>。在此基础上，我们从静态常数反推出完整的离散晶格动力学，使理论具备了可计算的预言能力。</p>
     <p class="en">This page presents the "First Principles" source of WDF Theory. We reject piecing together different mathematical tools. The entire cosmic spectrum (SU(3), 1836, 3 generations, neutrino mass) strictly follows an absolute unified chain: <strong>$S_{WDF} \text{ Action} \to \text{Field Equation Variation} \to \text{Topological Homology} \to \text{Auto-emergence of Physics}$</strong>. On this foundation, we reverse‑engineer a complete discrete lattice dynamics, endowing the theory with computable predictive power.</p>
 
+    <!-- ========== 重要概念说明：WDF 本体论 ========== -->
+    <div class="highlight-box" style="margin-top: 30px; border-left-color: #ff7b72; background: rgba(255,123,114,0.05);">
+        <p class="zh" style="margin-top: 0;"><strong>⚠️ 阅读前必读：WDF 本体论与旧物理概念的根本区别</strong><br>
+        在 WDF 中，宇宙的终极构成只有<strong>两种基本要素</strong>：<strong>空间节点</strong>（$O_h$ 晶格的底层硬件）与<strong>信息</strong>（在节点间传播和组织的内容）。不存在独立的“能量”、“质量”或“时间”——这些旧物理概念在 WDF 中都是<strong>派生现象</strong>，对应信息在晶格上不同组织方式的宏观表现：<br>
+        · <strong>“质量”</strong> = 信息被 3-form 封装协议锁存时所需支付的通道占用成本（$m_e \equiv 1$ 为基准单位）。<br>
+        · <strong>“能量”</strong> = 信息在晶格上组织方式的维度堆叠程度——0-form（引力骨架）为最低堆叠，3-form（强力封装）为最高堆叠。旧物理中“能量与质量的转化”本质是信息在不同维度协议之间的跃迁。<br>
+        · <strong>“时间”</strong> = 信息包在晶格上完成跃迁步数的宏观计数（$\tau_P$ 为基本步长）。<br>
+        因此，本页中出现的“能量”、“质量”、“频率”等术语，<strong>仅作为连接旧物理的翻译桥梁</strong>。其真正的 WDF 本体论含义将在相关推导中逐一阐明。</p>
+        <p class="en" style="margin-top: 15px; border-top: 1px solid #30363d; padding-top: 15px;"><strong>⚠️ Essential: Fundamental Distinction Between WDF Ontology and Old Physics Concepts</strong><br>
+        In WDF, the universe is ultimately constituted of only <strong>two fundamental elements</strong>: <strong>spatial nodes</strong> (the $O_h$ lattice hardware) and <strong>information</strong> (what propagates and organises between nodes). There exist no independent "energy", "mass" or "time"—these old‑physics concepts are all <strong>emergent phenomena</strong> in WDF, corresponding to macroscopic manifestations of different ways information organises on the lattice:<br>
+        · <strong>"Mass"</strong> = the channel‑occupation cost paid when information is locked by the 3‑form encapsulation protocol ($m_e \equiv 1$ is the benchmark unit).<br>
+        · <strong>"Energy"</strong> = the degree of dimensional stacking of information on the lattice—0‑form (gravity skeleton) is the lowest stacking, 3‑form (strong encapsulation) is the highest. The "conversion between energy and mass" in old physics is essentially information leaping between different dimensional protocols.<br>
+        · <strong>"Time"</strong> = the macroscopic counting of hopping steps completed by information packets on the lattice ($\tau_P$ is the elementary step).<br>
+        Hence, terms such as "energy", "mass", "frequency" appearing on this page serve <strong>only as translational bridges to old physics</strong>. Their true WDF ontological meanings are clarified in the relevant derivations.</p>
+    </div>
+
     <h3 style="margin-top: 30px;">
         <span class="zh">一、 终极作用量：非极小共形耦合拉格朗日量</span>
         <span class="en">I. The Ultimate Action: Non-Minimal Conformal Coupled Lagrangian</span>
@@ -111,13 +127,13 @@
         $$|t_0|^2 = c_1^2 = \frac{1}{1152}.$$
         跃迁的基准相位角为 $2\pi c_1$，因此复数跃迁振幅可写作 $t_0 = c_1 e^{i\phi_0}$。晶格常数 $a$（相邻节点间距）由电子质量基准 $m_e \equiv 1$ 与 $|t_0|$ 联合锁定：在连续极限下，电子传播子的极点必须恢复静质量 $m_e$，由此导出刚性的色散关系匹配条件
         $$m_e = \frac{1}{2|t_0| a^2} \quad\Rightarrow\quad a = \frac{1}{\sqrt{2 c_1 m_e}}.$$
-        光速 $c$ 并非独立参数，而是晶格信息传输速率的宏观名称：$c = a/\tau_P$。这一关系保证了所有 1-form 无质量激发（光子）在低能极限下严格以速度 $c$ 传播。</p>
+        光速 $c$ 并非独立参数，而是晶格信息传输速率的宏观名称：$c = a/\tau_P$。这一关系保证了所有 1-form 无质量激发（光子）在宏观连续极限下严格以速度 $c$ 传播。</p>
         <p class="en" style="margin-top: 15px; border-top: 1px solid #30363d; padding-top: 15px;"><strong>6.1 Fundamental Hopping Rule and Lattice Constant</strong><br>
         On the $O_h$ lattice, a 1‑form packet hops once per Planck time $\tau_P$. The squared modulus of the fundamental hopping amplitude $t_0$ is rigidly set by the topological homology constant $c_1 = 1/(24\sqrt{2})$:
         $$|t_0|^2 = c_1^2 = \frac{1}{1152}.$$
         The reference phase angle per hop is $2\pi c_1$, so the complex amplitude is $t_0 = c_1 e^{i\phi_0}$. The lattice constant $a$ (distance between adjacent nodes) is locked by the electron mass benchmark $m_e \equiv 1$ and $|t_0|$: in the continuum limit, the pole of the electron propagator must recover the rest mass $m_e$, yielding the rigid dispersion‑matching condition
         $$m_e = \frac{1}{2|t_0| a^2} \quad\Rightarrow\quad a = \frac{1}{\sqrt{2 c_1 m_e}}.$$
-        The speed of light $c$ is not an independent parameter but the macroscopic name for the lattice information transfer rate: $c = a/\tau_P$. This guarantees that all massless 1‑form excitations (photons) propagate exactly at speed $c$ in the low‑energy limit.</p>
+        The speed of light $c$ is not an independent parameter but the macroscopic name for the lattice information transfer rate: $c = a/\tau_P$. This guarantees that all massless 1‑form excitations (photons) propagate exactly at speed $c$ in the macroscopic continuum limit.</p>
     </div>
 
     <div class="highlight-box" style="margin-top: 20px; border-left-color: #4af626;">
@@ -137,13 +153,13 @@
         $$K(x_f, x_i; T) = \sum_{\gamma: x_i \to x_f} \prod_{\text{hops} \in \gamma} t_{i\to j}, \quad T = L\tau_P.$$
         取连续极限 $a\to 0,\ \tau_P\to 0$ 且保持 $a/\tau_P = c$，该离散和收敛为标准费曼路径积分。相位累积 $L\phi_0$ 在此极限下变为经典作用量 $S[\gamma]/\hbar$，而模长因子 $|t_0|^L = e^{L\ln c_1}$ 给出路径的统计权重。最终，传播子严格恢复相对论量子力学形式：
         $$K(x_f, x_i) = \int \mathcal{D}x \, \exp\!\left(i \int d\tau\, \frac{1}{2}m_e \dot{x}^2\right).$$
-        此极限下 $S_{WDF}$ 的连续形式自动涌现，其中 $\pi^2$ 因子正是从离散求和至连续积分的 Jacobian——它补偿了 $O_h$ 晶格逼近 $SO(3)$ 时的同调破缺。整个过程未引入任何额外假设，连续量子场论被证明是 WDF 离散动力学在低能下的精确有效描述。</p>
+        此极限下 $S_{WDF}$ 的连续形式自动涌现，其中 $\pi^2$ 因子正是从离散求和至连续积分的 Jacobian——它补偿了 $O_h$ 晶格逼近 $SO(3)$ 时的同调破缺。整个过程未引入任何额外假设，连续量子场论被证明是 WDF 离散动力学在宏观极限下的精确有效描述。</p>
         <p class="en" style="margin-top: 15px; border-top: 1px solid #30363d; padding-top: 15px;"><strong>6.3 Discrete Path Integral and Continuum Limit</strong><br>
         The total amplitude for a path $\gamma$ of $L$ hops is the product of the individual $t_{i\to j}$. The full propagator from initial node $x_i$ to final node $x_f$ is the sum over all possible paths:
         $$K(x_f, x_i; T) = \sum_{\gamma: x_i \to x_f} \prod_{\text{hops} \in \gamma} t_{i\to j}, \quad T = L\tau_P.$$
         Taking the continuum limit $a\to 0,\ \tau_P\to 0$ with $a/\tau_P = c$ fixed, the discrete sum converges to the standard Feynman path integral. The phase accumulation $L\phi_0$ becomes the classical action $S[\gamma]/\hbar$, while the modulus factor $|t_0|^L = e^{L\ln c_1}$ provides the statistical weight. In this limit the propagator rigorously recovers the relativistic quantum‑mechanical form:
         $$K(x_f, x_i) = \int \mathcal{D}x \, \exp\!\left(i \int d\tau\, \frac{1}{2}m_e \dot{x}^2\right).$$
-        The continuous $S_{WDF}$ action emerges automatically, with the $\pi^2$ factor acting as the Jacobian of the discrete‑to‑continuous transition—it compensates the homology breaking when the $O_h$ lattice approximates $SO(3)$. No extra hypotheses are introduced; continuous quantum field theory is proven to be the exact low‑energy effective description of WDF discrete dynamics.</p>
+        The continuous $S_{WDF}$ action emerges automatically, with the $\pi^2$ factor acting as the Jacobian of the discrete‑to‑continuous transition—it compensates the homology breaking when the $O_h$ lattice approximates $SO(3)$. No extra hypotheses are introduced; continuous quantum field theory is proven to be the exact macroscopic effective description of WDF discrete dynamics.</p>
     </div>
 
     <div class="highlight-box" style="margin-top: 20px; border-left-color: #ff7b72;">
@@ -153,19 +169,70 @@
         <strong>强（3-form 封装）：</strong> 三个正交的 2-form 面通过全反对称张量 $\epsilon_{ijk}$ 闭合成稳定 3-form 体积。该封装不可被局部拆解，因为任何单独抽出一个面都会导致 $\epsilon_{ijk}=0$——这正是色禁闭的拓扑根源。不稳定的 3-form（中子）在内部通量 $\chi$ 超过临界值时，通过 $\theta$ 算符剥落 2-form 面（反中微子）并挤出 1-form 弦（电子），自身收缩为稳定封装（质子），精确解释了 $\beta$ 衰变。</p>
         <p class="en" style="margin-top: 15px; border-top: 1px solid #30363d; padding-top: 15px;"><strong>6.4 Interaction Vertices: $\theta$ Operator & $\epsilon_{ijk}$ Encapsulation</strong><br>
         <strong>Electromagnetic (1-form exchange):</strong> Arises from the gauge‑covariant derivative of the nodal phase during propagation; its coupling $\alpha$ is rigorously derived from the one‑loop self‑energy of $t_0$, recovering the earlier rigid formula $\alpha^{-1} = 4/c_1 + O_h/(4\pi^2)$.<br>
-        <strong>Weak (2-form generation):</strong> When two 1‑form packets meet at a node with incompatible directions, the $\theta$ projector forces them to slice out a 2‑form transient surface; the vertex amplitude is $\mathcal{M} \propto \langle S | \theta | p_1,d_1; p_2,d_2\rangle$. The nilpotency $\theta^2=0$ forbids long‑range propagation of this surface—the dynamical realisation of the weak force’s short range.<br>
+        <strong>Weak (2-form generation):</strong> When two 1‑form packets meet at a node with incompatible directions, the $\theta$ projector forces them to slice out a 2‑form transient surface; the vertex amplitude is $\mathcal{M} \propto \langle S | \theta | p_1,d_1; p_2,d_2\rangle$. The nilpotency $\theta^2=0$ forbids long‑range propagation of this surface—the dynamical realisation of the weak force's short range.<br>
         <strong>Strong (3-form encapsulation):</strong> Three mutually orthogonal 2‑form surfaces are closed into a stable 3‑form volume via the totally antisymmetric tensor $\epsilon_{ijk}$. This encapsulation cannot be locally dismantled because removing any single face forces $\epsilon_{ijk}=0$—the topological origin of colour confinement. An unstable 3‑form (neutron) exceeds the critical internal flux $\chi$, shedding a 2‑form surface (antineutrino) and extruding a 1‑form string (electron) while contracting into a stable encapsulation (proton), precisely accounting for $\beta$ decay.</p>
     </div>
 
     <div class="highlight-box" style="margin-top: 20px; border-left-color: var(--accent-color);">
-        <p class="zh" style="margin-top: 0;"><strong>6.5 离散修正与实验检验</strong><br>
-        有限晶格常数 $a$ 在极高能标下引入领头阶色散修正：
-        $$E^2 = p^2 c^2 + m^2 c^4 - \frac{a^2}{12\hbar^2} p^4 c^2 + \mathcal{O}(p^6).$$
-        对于光子 ($m=0$)，其有效速度变为 $v_\gamma(E) = c\left[1 - (c_1^2/8)(E/m_e c^2)^2 + \cdots\right]$。这一修正系数 $c_1^2/8 = 1/9216$ 是纯刚性的——它仅依赖 $c_1$，不含任何可调参数。对于发生在宇宙学距离上的伽马射线暴，不同能量光子的到达时间差将可测量地体现这一效应。该预言与圈量子引力或弦理论的色散关系定性相似，但修正系数完全不同，为未来高能天体物理（如 LHAASO、CTA）提供了明确的鉴别判据。</p>
-        <p class="en" style="margin-top: 15px; border-top: 1px solid #30363d; padding-top: 15px;"><strong>6.5 Discrete Corrections and Experimental Tests</strong><br>
-        The finite lattice constant $a$ introduces a leading‑order dispersion correction at ultra‑high energies:
-        $$E^2 = p^2 c^2 + m^2 c^4 - \frac{a^2}{12\hbar^2} p^4 c^2 + \mathcal{O}(p^6).$$
-        For photons ($m=0$), the effective speed becomes $v_\gamma(E) = c\left[1 - (c_1^2/8)(E/m_e c^2)^2 + \cdots\right]$. The correction coefficient $c_1^2/8 = 1/9216$ is purely rigid—it depends only on $c_1$, with no adjustable parameters. For gamma‑ray bursts at cosmological distances, the arrival‑time difference between photons of different energies will measurably manifest this effect. The prediction is qualitatively similar to dispersion relations from loop quantum gravity or string theory, but the coefficient is uniquely distinct, providing a clear discriminant for future high‑energy astrophysics (e.g. LHAASO, CTA).</p>
+        <p class="zh" style="margin-top: 0;"><strong>6.5 光子色散的刚性修正：信息论本体论下的完整阐述</strong></p>
+        
+        <p class="zh"><strong>（a）WDF 本体论前提：光子是什么？</strong><br>
+        在 WDF 中，<strong>光子不是携带“能量”的独立粒子</strong>。它是 1-form 信息包的<strong>相位扰动</strong>在晶格上的传播。光子之所以无静质量，是因为它的信息从未被任何封装协议（2-form 或 3-form）锁存——它是纯粹的“行波”，永远以晶格允许的最大速率 $c = a/\tau_P$ 传播。<br>
+        旧物理中光子的“频率”和“能量”，在 WDF 中对应于<strong>相位扰动在单位时间内完成完整循环的次数</strong>——即相位扰动的振荡频率。光子的“高能”与“低能”之别，仅仅是这个振荡频率的高低之别，<strong>与维度堆叠程度无关</strong>。光子始终是 1-form 传播模，不发生维度跃迁。</p>
+
+        <p class="zh"><strong>（b）离散晶格上的色散关系</strong><br>
+        对于在间距为 $a$ 的离散晶格上传播的相位扰动，其振荡频率 $\omega$ 与波矢 $k$ 的关系由最近邻跃迁的离散傅里叶变换严格决定：
+        $$\omega(k) = \frac{2}{\tau_P} \left| \sin\left(\frac{k a}{2}\right) \right|.$$
+        这是晶格上任意 1-form 无质量传播模的<strong>精确色散关系</strong>，不依赖于任何近似。</p>
+
+        <p class="zh"><strong>（c）宏观极限与领头阶修正</strong><br>
+        当相位扰动的波长 $\lambda = 2\pi/k$ 远大于晶格常数 $a$（即 $ka \ll 1$，对应旧物理中光子频率远低于奈奎斯特频率 $f_{Nyq} = 1/(2\tau_P)$），展开得到：
+        $$\omega(k) = \frac{a}{\tau_P} k - \frac{a^3}{24 \tau_P} k^3 + \mathcal{O}(k^5).$$
+        利用 $c = a/\tau_P$，相位扰动的传播速度 $v_\gamma = d\omega/dk$ 为：
+        $$v_\gamma(k) = c \left( 1 - \frac{a^2}{8} k^2 + \cdots \right).$$
+        将波矢 $k$ 转化为旧物理中的光子“能量” $E_\gamma = \hbar \omega \approx \hbar c k$ 作为翻译桥梁，并代入晶格常数 $a = c_1 h/(m_e c)$，得到：
+        $$\boxed{v_\gamma(E_\gamma) = c \left[ 1 - \frac{c_1^2}{8} \left( \frac{E_\gamma}{m_e c^2} \right)^2 + \cdots \right] = c \left[ 1 - \frac{1}{9216} \left( \frac{E_\gamma}{511\ \text{keV}} \right)^2 + \cdots \right]}.$$
+        修正系数 $c_1^2/8 = 1/9216 \approx 1.085 \times 10^{-4}$ <strong>仅依赖于拓扑常数 $c_1$，完全刚性，不含任何可调参数</strong>。</p>
+
+        <p class="zh"><strong>（d）适用范围与物理诠释</strong><br>
+        <strong>本公式的严格适用范围为 $E_\gamma \ll m_e c^2 \cdot \sqrt{8}/c_1 \approx 49\ \text{MeV}$</strong>（即相位扰动波长 $\lambda \gg a$ 的宏观极限）。在此范围内，修正量级为 $10^{-4}$ 到 $10^{-3}$，可通过宇宙学距离上的伽马射线暴（GRB）光子到达时间差进行检验。<br>
+        <strong>对于更高频率的光子（GeV–TeV），连续极限下的规范场描述接管。</strong>$S_{WDF}$ 在连续极限下严格恢复标准 QED 作用量 $\propto F^2$，光子的色散关系恢复为严格的 $E = pc$（即 $v = c$），无任何离散修正。因此，<strong>WDF 不预言高能光子存在能量上限</strong>——地面切伦科夫望远镜（HESS、MAGIC、LHAASO）观测到的数十 TeV 光子与 WDF 完全相容。晶格的离散效应仅在相位扰动波长接近晶格常数 $a$（对应旧物理中 $\sim 10\ \text{MeV}$ 量级）时才开始显现。</p>
+
+        <p class="zh"><strong>（e）与电子对产生阈值的关系</strong><br>
+        旧物理中，能量超过 $2m_e c^2 \approx 1.022\ \text{MeV}$ 的光子可以转化为正负电子对。在 WDF 中，这一现象被重新诠释为：<strong>当 1-form 相位扰动的频率超过临界值时，单一的 1-form 传播模不再稳定，信息被迫进行维度重组</strong>——一部分信息通过 $\theta$ 算符触发 2-form 瞬态面，进而封装为两个独立的 1-form 传播态（电子与正电子，各占用 1 个通道，具有 3-form 封装成本 $m_e$）。该临界频率对应的旧物理“能量”由 $m_e$ 基准自然给出，与观测完全一致。</p>
+
+        <p class="zh"><strong>（f）可检验的判决性预言</strong><br>
+        对于宇宙学距离上的 GRB，MeV 量级的光子将因离散晶格效应产生可测量的到达时间延迟，修正系数严格为 $1/9216$。该系数与任何其他量子引力模型（圈量子引力、弦理论等）的色散关系预言均不同，构成<strong>唯一的鉴别判据</strong>。同时，TeV 以上光子不存在真空色散的刚性预言也与某些量子引力模型形成鲜明对比。未来高能天体物理实验（LHAASO、CTA、Fermi-LAT 的大统计 GRB 样本）将对此做出终局裁决。</p>
+
+        <p class="en" style="margin-top: 15px; border-top: 1px solid #30363d; padding-top: 15px;"><strong>6.5 Rigid Correction to Photon Dispersion: Complete Exposition under Information‑Theoretic Ontology</strong></p>
+        
+        <p class="en"><strong>(a) WDF Ontological Premise: What is a Photon?</strong><br>
+        In WDF, a <strong>photon is not an independent particle carrying "energy"</strong>. It is the propagation of a <strong>phase disturbance</strong> of a 1‑form information packet on the lattice. A photon has no rest mass because its information is never locked by any encapsulation protocol (2‑form or 3‑form)—it is a pure "travelling wave", always propagating at the maximal rate $c = a/\tau_P$ allowed by the lattice.<br>
+        The "frequency" and "energy" of a photon in old physics correspond in WDF to <strong>the number of complete cycles the phase disturbance completes per unit time</strong>—i.e., the oscillation frequency of the phase disturbance. The distinction between a "high‑energy" and a "low‑energy" photon is solely a distinction in this oscillation frequency, <strong>and has nothing to do with the degree of dimensional stacking</strong>. A photon is always a 1‑form propagation mode; it never undergoes a dimensional transition.</p>
+
+        <p class="en"><strong>(b) Dispersion Relation on the Discrete Lattice</strong><br>
+        For a phase disturbance propagating on a discrete lattice of spacing $a$, its oscillation frequency $\omega$ and wave‑vector $k$ are rigorously related by the discrete Fourier transform of nearest‑neighbour hopping:
+        $$\omega(k) = \frac{2}{\tau_P} \left| \sin\left(\frac{k a}{2}\right) \right|.$$
+        This is the <strong>exact dispersion relation</strong> for any massless 1‑form propagation mode on the lattice, independent of any approximation.</p>
+
+        <p class="en"><strong>(c) Macroscopic Limit and Leading‑Order Correction</strong><br>
+        When the wavelength $\lambda = 2\pi/k$ of the phase disturbance is far larger than the lattice constant $a$ (i.e., $ka \ll 1$, corresponding in old physics to photon frequencies far below the Nyquist frequency $f_{Nyq} = 1/(2\tau_P)$), expanding yields:
+        $$\omega(k) = \frac{a}{\tau_P} k - \frac{a^3}{24 \tau_P} k^3 + \mathcal{O}(k^5).$$
+        Using $c = a/\tau_P$, the propagation speed of the phase disturbance $v_\gamma = d\omega/dk$ is:
+        $$v_\gamma(k) = c \left( 1 - \frac{a^2}{8} k^2 + \cdots \right).$$
+        Translating the wave‑vector $k$ into the old‑physics photon "energy" $E_\gamma = \hbar \omega \approx \hbar c k$, and substituting the lattice constant $a = c_1 h/(m_e c)$, we obtain:
+        $$\boxed{v_\gamma(E_\gamma) = c \left[ 1 - \frac{c_1^2}{8} \left( \frac{E_\gamma}{m_e c^2} \right)^2 + \cdots \right] = c \left[ 1 - \frac{1}{9216} \left( \frac{E_\gamma}{511\ \text{keV}} \right)^2 + \cdots \right]}.$$
+        The correction coefficient $c_1^2/8 = 1/9216 \approx 1.085 \times 10^{-4}$ <strong>depends only on the topological constant $c_1$, is completely rigid, and contains zero adjustable parameters</strong>.</p>
+
+        <p class="en"><strong>(d) Domain of Applicability and Physical Interpretation</strong><br>
+        <strong>The strict domain of applicability of this formula is $E_\gamma \ll m_e c^2 \cdot \sqrt{8}/c_1 \approx 49\ \text{MeV}$</strong> (i.e., the macroscopic limit where the phase‑disturbance wavelength $\lambda \gg a$). In this regime, the correction is on the order of $10^{-4}$ to $10^{-3}$ and is testable via the arrival‑time differences of gamma‑ray burst (GRB) photons over cosmological distances.<br>
+        <strong>For higher‑frequency photons (GeV–TeV), the continuum‑limit gauge‑field description takes over.</strong> $S_{WDF}$ in the continuum limit rigorously recovers the standard QED action $\propto F^2$, and the photon dispersion relation recovers the strict $E = pc$ (i.e., $v = c$), with zero discrete corrections. Hence, <strong>WDF does NOT predict any upper energy bound for photons</strong>—the tens‑of‑TeV photons observed by ground‑based Cherenkov telescopes (HESS, MAGIC, LHAASO) are fully compatible with WDF. The discrete lattice effects only become manifest when the phase‑disturbance wavelength approaches the lattice constant $a$ (corresponding in old physics to the $\sim 10\ \text{MeV}$ scale).</p>
+
+        <p class="en"><strong>(e) Relation to the Pair‑Production Threshold</strong><br>
+        In old physics, a photon with energy exceeding $2m_e c^2 \approx 1.022\ \text{MeV}$ can convert into an electron‑positron pair. In WDF, this phenomenon is reinterpreted as: <strong>when the frequency of a 1‑form phase disturbance exceeds a critical value, the single 1‑form propagation mode becomes unstable, and the information is forced to undergo dimensional reorganisation</strong>—part of the information triggers a 2‑form transient surface via the $\theta$ operator, which then encapsulates into two independent 1‑form propagation states (electron and positron, each occupying 1 channel, with a 3‑form encapsulation cost of $m_e$). The critical frequency, expressed in old‑physics "energy", is naturally given by the $m_e$ benchmark, in complete agreement with observation.</p>
+
+        <p class="en"><strong>(f) Testable Decisive Prediction</strong><br>
+        For GRBs at cosmological distances, MeV‑scale photons will exhibit measurable arrival‑time delays due to the discrete lattice effect, with a correction coefficient strictly equal to $1/9216$. This coefficient differs from the dispersion‑relation predictions of any other quantum‑gravity model (loop quantum gravity, string theory, etc.), constituting a <strong>unique discriminant</strong>. Simultaneously, the rigid prediction of zero vacuum dispersion for >TeV photons stands in sharp contrast to certain other quantum‑gravity models. Future high‑energy astrophysical experiments (LHAASO, CTA, large GRB samples from Fermi‑LAT) will deliver the final verdict.</p>
     </div>
 
     <h3 style="margin-top: 50px; border-top: 1px dashed var(--border-color); padding-top: 30px;">
