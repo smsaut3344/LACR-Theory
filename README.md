@@ -77,7 +77,6 @@ WDF has been extended with a complete **discrete lattice dynamics** framework:
 
 ## 📂 Repository Contents
 
-- **`WDF_Paper.tex`**: Full LaTeX source (RevTeX 4.2, PRD-compatible).
 - **`WDF_Paper.pdf`**: Compiled manuscript.
 - **`index.html`**: Interactive web version of the full theory (English/Chinese bilingual).
 - **`wdf_engine.py`**: Core physics engine with hardcoded $O_h=48$ topological constants (experimental).
